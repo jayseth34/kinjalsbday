@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy 26th, Kinjal</title>
+<meta name="description" content="For Kinjal — my Bittu, my Yapper — on her 26th birthday.">
+<meta name="theme-color" content="#2a1530">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#2a1530; --plum:#4a2350; --rose:#e8748f; --blush:#f7c9d3;
+  --cream:#fdf6ec; --paper:#f8ecd9; --ink:#3a2433; --gold:#f2b84b;
+  --avo:#7a9a3e; --avo-dark:#4f6b22; --muted:#8a6f7d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--cream);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+body.locked{overflow:hidden}
+h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;letter-spacing:-.01em}
+.hand{font-family:"Caveat",cursive}
+section{position:relative;padding:96px 20px;max-width:1040px;margin:0 auto}
+.eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);font-weight:700;margin-bottom:12px}
+.sec-title{font-size:clamp(2rem,6vw,3.2rem);line-height:1.05;margin-bottom:14px}
+.sec-sub{color:var(--muted);max-width:560px;font-size:1.05rem;line-height:1.6}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- GATE ---------- */
+#gate{
+  position:fixed;inset:0;z-index:50;display:grid;place-items:center;
+  background:radial-gradient(ellipse at 50% 30%,#5a2a5e 0%,var(--night) 70%);
+  transition:opacity 1s ease, visibility 1s;
+}
+#gate.gone{opacity:0;visibility:hidden}
+.gate-inner{text-align:center;color:var(--cream);padding:20px}
+.gate-inner p{font-family:"Caveat";font-size:1.7rem;color:var(--blush);margin-top:28px}
+.envelope{
+  width:240px;height:160px;position:relative;margin:0 auto;cursor:pointer;
+  animation:bob 3s ease-in-out infinite;
+}
+.envelope .body{position:absolute;inset:0;background:#f1d9c0;border-radius:8px;box-shadow:0 30px 60px rgba(0,0,0,.4)}
+.envelope .flap{
+  position:absolute;top:0;left:0;right:0;height:95px;transform-origin:top;
+  background:#e6c5a6;clip-path:polygon(0 0,100% 0,50% 100%);transition:transform .7s ease;z-index:3;
+}
+.envelope .pocket{position:absolute;inset:0;background:#f5e2cd;clip-path:polygon(0 100%,50% 45%,100% 100%);border-radius:8px;z-index:2}
+.envelope .seal{
+  position:absolute;left:50%;top:78px;width:44px;height:44px;margin-left:-22px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#ff8fa8,#c23b5e);z-index:4;display:grid;place-items:center;
+  font-size:20px;box-shadow:0 4px 10px rgba(0,0,0,.25);transition:opacity .3s
+}
+.envelope .peek{
+  position:absolute;left:18px;right:18px;top:20px;height:120px;background:var(--cream);border-radius:4px;z-index:1;
+  transition:transform .8s .3s cubic-bezier(.2,.8,.2,1);display:grid;place-items:start center;padding-top:10px;
+  font-family:"Caveat";font-size:1.5rem;color:var(--plum)
+}
+.envelope.open .flap{transform:rotateX(180deg);z-index:0}
+.envelope.open .seal{opacity:0}
+.envelope.open .peek{transform:translateY(-90px)}
+@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* ---------- HERO ---------- */
+#hero{
+  min-height:100svh;max-width:none;display:grid;place-items:center;text-align:center;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 120%,#7b3a6e 0%,var(--plum) 35%,var(--night) 80%);color:var(--cream);
+}
+#sky{position:absolute;inset:0;pointer-events:none}
+.hero-inner{position:relative;z-index:2}
+.hero-date{font-family:"Caveat";font-size:1.6rem;color:var(--blush);opacity:0;animation:fadeUp 1s 1.6s forwards}
+.hero-h{font-size:clamp(3rem,13vw,8rem);line-height:.9;font-weight:700;margin:10px 0 6px}
+.hero-h .w{display:inline-block;opacity:0;transform:translateY(60px) rotate(6deg);animation:wordIn 1s cubic-bezier(.2,.9,.2,1.2) forwards}
+.hero-h em{font-style:italic;color:var(--gold);font-weight:500}
+.big26{
+  font-family:"Fraunces";font-size:clamp(5rem,28vw,15rem);font-weight:800;line-height:1;
+  background:linear-gradient(180deg,var(--gold),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent;
+  opacity:0;animation:pop 1.2s 1.1s cubic-bezier(.2,1.4,.4,1) forwards;
+}
+.nicks{height:3.2rem;margin-top:8px;font-family:"Caveat";font-size:2.4rem;color:var(--blush)}
+.nicks .caret{display:inline-block;width:2px;height:1.8rem;background:var(--blush);margin-left:4px;vertical-align:middle;animation:blink 1s steps(1) infinite}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--blush);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;opacity:.8;z-index:2}
+.scroll-hint::after{content:"";display:block;width:1px;height:40px;background:var(--blush);margin:10px auto 0;animation:drip 2s infinite}
+@keyframes wordIn{to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.3)}100%{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes blink{50%{opacity:0}}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- RING / ENGAGEMENT ---------- */
+#ring{text-align:center}
+.ring-svg{width:150px;height:150px;margin:0 auto 18px;display:block}
+.ring-svg .band{stroke-dasharray:420;stroke-dashoffset:420;transition:stroke-dashoffset 2.2s ease}
+.ring-svg .gem{transform-origin:75px 34px;transform:scale(0);transition:transform .8s 1.8s cubic-bezier(.2,1.6,.4,1)}
+#ring.in .band{stroke-dashoffset:0}
+#ring.in .gem{transform:scale(1)}
+.counter-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px}
+.ctr{background:#fff;border-radius:18px;padding:18px 22px;min-width:110px;box-shadow:0 10px 30px rgba(74,35,80,.08)}
+.ctr b{display:block;font-family:"Fraunces";font-size:2.4rem;color:var(--plum);font-variant-numeric:tabular-nums}
+.ctr span{font-size:.8rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+
+/* ---------- MEMORIES ---------- */
+#memories{max-width:none;background:var(--paper)}
+#memories .wrap{max-width:1040px;margin:0 auto}
+.trail{position:relative;margin-top:56px}
+.trail svg.path{position:absolute;left:50%;top:0;height:100%;width:40px;transform:translateX(-50%);overflow:visible}
+.trail svg.path path{fill:none;stroke:var(--rose);stroke-width:3;stroke-dasharray:6 10;stroke-linecap:round}
+.mem{position:relative;width:calc(50% - 40px);margin-bottom:46px}
+.mem:nth-child(odd of .mem){margin-right:auto}
+.mem:nth-child(even of .mem){margin-left:auto}
+.mem .card{
+  background:#fff;border-radius:6px;padding:14px 14px 20px;box-shadow:0 18px 40px rgba(58,36,51,.12);
+  transform:rotate(var(--r,-2deg));transition:transform .4s;
+}
+.mem .card:hover{transform:rotate(0) scale(1.03)}
+.mem .art{height:150px;border-radius:3px;display:grid;place-items:center;font-size:4rem;overflow:hidden;position:relative}
+.mem .art .emo{animation:float 4s ease-in-out infinite}
+.mem h3{font-size:1.35rem;margin:14px 4px 4px}
+.mem p{font-family:"Caveat";font-size:1.35rem;color:var(--muted);margin:0 4px;line-height:1.2}
+.mem .tape{position:absolute;top:-12px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(242,184,75,.55);transform:rotate(-4deg);z-index:2}
+.dot{position:absolute;top:60px;width:18px;height:18px;border-radius:50%;background:var(--rose);border:4px solid var(--paper);box-shadow:0 0 0 3px var(--rose)}
+.mem:nth-child(odd of .mem) .dot{right:-49px}
+.mem:nth-child(even of .mem) .dot{left:-49px}
+.and-counting{text-align:center;font-family:"Caveat";font-size:2rem;color:var(--plum);margin-top:10px}
+.and-counting span{display:inline-block;animation:bounce 1.2s infinite}
+.and-counting span:nth-child(2){animation-delay:.15s}.and-counting span:nth-child(3){animation-delay:.3s}
+@keyframes float{50%{transform:translateY(-8px) rotate(4deg)}}
+@keyframes bounce{50%{transform:translateY(-8px)}}
+
+/* pizza game */
+.pizza-box{margin:20px auto 0;max-width:560px;background:#fff;border-radius:22px;padding:26px 20px;text-align:center;box-shadow:0 18px 40px rgba(58,36,51,.1)}
+.pizza-box h3{font-size:1.5rem}
+.pizza-box p{color:var(--muted);margin:6px 0 16px}
+.pizza{width:230px;height:230px;margin:0 auto;position:relative;border-radius:50%;cursor:crosshair;
+  background:radial-gradient(circle,#e8553b 0 62%,#f0c27a 63% 74%,#d99a4e 75%);box-shadow:inset 0 0 0 6px #c98840, 0 10px 25px rgba(0,0,0,.15);touch-action:manipulation}
+.pizza .top{position:absolute;font-size:22px;transform:translate(-50%,-50%) scale(0);animation:drop .35s forwards;pointer-events:none}
+@keyframes drop{to{transform:translate(-50%,-50%) scale(1)}}
+.toppings{display:flex;gap:8px;justify-content:center;margin:16px 0 0;flex-wrap:wrap}
+.toppings button{border:2px solid var(--blush);background:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-size:1.2rem;cursor:pointer;transition:.2s}
+.toppings button.on{background:var(--blush);border-color:var(--rose)}
+.pizza-msg{font-family:"Caveat";font-size:1.5rem;color:var(--plum);min-height:2rem;margin-top:12px}
+
+/* ---------- GIFTS ---------- */
+#gifts .shelf{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.gift{background:#fff;border-radius:22px;padding:26px 16px 22px;text-align:center;cursor:pointer;position:relative;
+  box-shadow:0 10px 30px rgba(74,35,80,.07);transition:transform .3s, box-shadow .3s;user-select:none}
+.gift:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(74,35,80,.14)}
+.gift svg{width:110px;height:110px;display:block;margin:0 auto 10px;transition:transform .4s cubic-bezier(.2,1.6,.4,1)}
+.gift.squish svg{animation:squish .6s}
+.gift h3{font-size:1.15rem}
+.gift .say{font-family:"Caveat";font-size:1.25rem;color:var(--rose);min-height:3rem;margin-top:6px;line-height:1.1}
+.gift .tap{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+@keyframes squish{30%{transform:scale(1.2,.8)}60%{transform:scale(.9,1.1)}100%{transform:none}}
+
+/* ---------- LETTERS ---------- */
+#letters{max-width:none;background:linear-gradient(180deg,var(--cream),#fbe3e8)}
+#letters .wrap{max-width:1040px;margin:0 auto}
+.box-scene{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center;margin-top:40px}
+.keepbox{position:relative;width:100%;max-width:340px;aspect-ratio:1.2;margin:0 auto}
+.keepbox .base{position:absolute;bottom:0;left:0;right:0;height:62%;background:linear-gradient(180deg,#b5654f,#8d4636);border-radius:6px 6px 12px 12px;box-shadow:0 30px 50px rgba(58,36,51,.25);z-index:3}
+.keepbox .base::after{content:"Kinjal ♥ Jay";position:absolute;inset:auto 0 30%;text-align:center;font-family:"Caveat";font-size:1.8rem;color:#f8dcc9}
+.keepbox .lid{position:absolute;left:-4%;right:-4%;top:28%;height:16%;background:#c97660;border-radius:8px;transform-origin:10% 100%;transition:transform 1s cubic-bezier(.4,1.6,.4,1);z-index:4;box-shadow:0 6px 0 #a45a47}
+.keepbox.open .lid{transform:rotate(-24deg) translateY(-20px)}
+.keepbox .note{position:absolute;left:50%;bottom:30%;width:44%;height:40%;border-radius:3px;z-index:2;cursor:pointer;
+  transform:translateX(-50%);transition:transform .9s cubic-bezier(.2,1.4,.4,1);box-shadow:0 4px 10px rgba(0,0,0,.12)}
+.keepbox.open .note{transform:translateX(calc(-50% + var(--x))) translateY(var(--y)) rotate(var(--rot))}
+.lost{position:absolute;font-size:1.3rem;opacity:.55;animation:drift 9s linear infinite;pointer-events:none}
+@keyframes drift{0%{transform:translate(0,0) rotate(0)}100%{transform:translate(-80px,-160px) rotate(-60deg);opacity:0}}
+.reader{background:#fffaf2;border-radius:6px;padding:30px 28px;min-height:280px;box-shadow:0 18px 40px rgba(58,36,51,.12);
+  background-image:repeating-linear-gradient(180deg,transparent 0 33px,#f0d9de 33px 34px);position:relative}
+.reader .hand{font-size:1.6rem;line-height:34px;color:var(--plum);white-space:pre-wrap}
+.reader .from{text-align:right;margin-top:10px}
+.reader-hint{font-family:"Caveat";font-size:1.4rem;color:var(--muted)}
+.btn{display:inline-block;margin-top:18px;border:0;background:var(--plum);color:var(--cream);padding:13px 24px;border-radius:999px;font:600 .95rem "DM Sans";cursor:pointer;transition:transform .2s, background .2s}
+.btn:hover{transform:translateY(-2px);background:#5c2d63}
+
+/* ---------- GIVER ---------- */
+#giver{text-align:center}
+.reasons{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+.reason{background:#fff;border:2px solid var(--blush);border-radius:999px;padding:12px 20px;font-size:1rem;opacity:0;transform:scale(.6)}
+.reason.in{animation:popIn .6s cubic-bezier(.2,1.6,.4,1) forwards}
+@keyframes popIn{to{opacity:1;transform:none}}
+
+/* ---------- CAKE ---------- */
+#cake{max-width:none;background:var(--night);color:var(--cream);text-align:center;overflow:hidden}
+#cake .sec-sub{color:var(--blush);margin:0 auto}
+.cake-wrap{position:relative;width:300px;max-width:90vw;margin:50px auto 10px}
+.candles{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 9px;padding:0 28px;margin-bottom:-4px;position:relative;z-index:2}
+.candle{width:8px;height:34px;border-radius:2px;background:repeating-linear-gradient(45deg,#fff 0 4px,var(--rose) 4px 8px);position:relative;cursor:pointer}
+.candle .flame{position:absolute;bottom:100%;left:50%;width:10px;height:16px;margin-left:-5px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+  background:radial-gradient(circle at 50% 70%,#fff 0 20%,var(--gold) 40%,#ff7a3d 80%);box-shadow:0 0 14px 4px rgba(242,184,75,.55);animation:flick .15s infinite alternate;transition:opacity .3s}
+.candle.out .flame{opacity:0}
+.candle.out::after{content:"";position:absolute;bottom:100%;left:50%;width:2px;height:20px;background:linear-gradient(transparent,#aaa);animation:smoke 1.2s forwards;opacity:.6}
+@keyframes flick{to{transform:scale(1.08,.94) rotate(3deg)}}
+@keyframes smoke{to{transform:translateY(-30px);opacity:0}}
+.cake{height:150px;border-radius:14px 14px 20px 20px;background:linear-gradient(180deg,#f7c9d3 0 22%,#fff2e2 22% 30%,#c7795c 30% 62%,#fff2e2 62% 70%,#c7795c 70%);position:relative;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.cake::before{content:"";position:absolute;top:28px;left:0;right:0;height:22px;background:radial-gradient(circle at 12px 0,#f7c9d3 12px,transparent 13px) 0 0/24px 22px repeat-x}
+.cake-name{position:absolute;top:56px;left:0;right:0;font-family:"Caveat";font-size:2rem;color:#fff2e2}
+.plate{height:16px;margin:0 -20px;background:#ddd;border-radius:50%;box-shadow:0 6px 0 #bbb}
+.cake-status{font-family:"Caveat";font-size:1.7rem;color:var(--gold);min-height:2.4rem;margin-top:26px}
+.blow-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn.light{background:var(--rose)}
+.btn.ghost{background:transparent;border:1.5px solid var(--blush);color:var(--blush)}
+
+/* ---------- FINALE ---------- */
+#finale{max-width:none;min-height:100svh;display:grid;place-items:center;text-align:center;
+  background:radial-gradient(ellipse at 50% 100%,#7b3a6e,var(--night) 70%);color:var(--cream);overflow:hidden}
+#finale .inner{max-width:620px;position:relative;z-index:2}
+#finale h2{font-size:clamp(2.4rem,9vw,5rem);line-height:1}
+#finale h2 em{color:var(--gold)}
+#finale p{font-size:1.15rem;line-height:1.7;color:var(--blush);margin-top:22px}
+#finale .sign{font-family:"Caveat";font-size:2.2rem;color:var(--cream);margin-top:28px}
+.heart-beat{font-size:3.4rem;display:inline-block;animation:beat 1.2s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.15)}}
+footer{background:var(--night);color:var(--muted);text-align:center;padding:24px;font-size:.85rem}
+
+/* floating hearts & confetti */
+.fx{position:fixed;inset:0;pointer-events:none;z-index:60}
+.fheart{position:absolute;bottom:-40px;animation:rise linear forwards}
+@keyframes rise{to{transform:translateY(-115vh) translateX(var(--dx)) rotate(var(--rot));opacity:0}}
+.music{position:fixed;right:16px;bottom:16px;z-index:40;width:48px;height:48px;border-radius:50%;border:0;background:var(--rose);color:#fff;font-size:1.3rem;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.25);display:none}
+.music.show{display:block}
+
+/* ---------- MOBILE ---------- */
+@media (max-width:760px){
+  section{padding:72px 16px}
+  .trail svg.path{left:14px;transform:none}
+  .mem{width:auto;margin-left:40px!important;margin-right:0!important}
+  .mem .dot{left:-35px!important;right:auto!important}
+  #gifts .shelf{grid-template-columns:repeat(2,1fr);gap:12px}
+  .gift svg{width:84px;height:84px}
+  .box-scene{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body class="locked">
+
+<!-- ============ GATE ============ -->
+<div id="gate">
+  <div class="gate-inner">
+    <div class="envelope" id="env" role="button" tabindex="0" aria-label="Open the envelope">
+      <div class="peek">for my Bittu ♥</div>
+      <div class="pocket"></div>
+      <div class="body"></div>
+      <div class="flap"></div>
+      <div class="seal">♥</div>
+    </div>
+    <p>A letter for you, Yapper.<br>Tap to open 💌</p>
+  </div>
+</div>
+
+<div class="fx" id="fx"></div>
+<button class="music" id="musicBtn" aria-label="Toggle music">♪</button>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <canvas id="sky"></canvas>
+  <div class="hero-inner">
+    <div class="eyebrow" style="color:var(--blush)">it's your day</div>
+    <h1 class="hero-h">
+      <span class="w" style="animation-delay:.2s">Happy</span>
+      <span class="w" style="animation-delay:.45s">Birthday,</span><br>
+      <span class="w" style="animation-delay:.7s"><em>Kinjal</em></span>
+    </h1>
+    <div class="big26">26</div>
+    <div class="nicks"><span id="nick"></span><span class="caret"></span></div>
+  </div>
+  <div class="scroll-hint">scroll, slowly</div>
+</section>
+
+<!-- ============ ENGAGEMENT ============ -->
+<section id="ring" class="reveal">
+  <svg class="ring-svg" viewBox="0 0 150 150" aria-hidden="true">
+    <circle class="band" cx="75" cy="88" r="44" fill="none" stroke="#f2b84b" stroke-width="9"/>
+    <g class="gem">
+      <polygon points="75,14 92,30 75,52 58,30" fill="#f7c9d3" stroke="#e8748f" stroke-width="2"/>
+      <polygon points="58,30 92,30 75,52" fill="#fbe3e8"/>
+    </g>
+  </svg>
+  <div class="eyebrow">16 · 07 · 2026</div>
+  <h2 class="sec-title">The day you said yes.</h2>
+  <p class="sec-sub" style="margin:0 auto">This is your first birthday as my fiancée — and I've been counting every second since.</p>
+  <div class="counter-row">
+    <div class="ctr"><b id="cDays">0</b><span>days</span></div>
+    <div class="ctr"><b id="cHours">0</b><span>hours</span></div>
+    <div class="ctr"><b id="cMins">0</b><span>minutes</span></div>
+    <div class="ctr"><b id="cSecs">0</b><span>seconds</span></div>
+  </div>
+</section>
+
+<!-- ============ MEMORIES ============ -->
+<section id="memories">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">our little map</div>
+      <h2 class="sec-title">Places that are<br>now <em>ours</em>.</h2>
+      <p class="sec-sub">Every table we sat at, every road we took — I'd do every one of them again.</p>
+    </div>
+
+    <div class="trail" id="trail">
+      <svg class="path" preserveAspectRatio="none"><path id="trailPath"/></svg>
+
+      <div class="mem reveal" style="--r:-3deg"><div class="dot"></div><div class="card"><div class="tape"></div>
+        <div class="art" style="background:linear-gradient(180deg,#9fc6d8 0 45%,#6f9a5b 45%)">
+          <svg viewBox="0 0 200 150" width="100%" height="100%"><path d="M0 95 L50 45 L85 75 L125 30 L200 90 L200 150 L0 150Z" fill="#4f6b22" opacity=".85"/><path d="M0 110 L60 70 L110 100 L160 65 L200 100 L200 150 L0 150Z" fill="#3c541a"/><circle cx="160" cy="28" r="12" fill="#fff2c4"/><g fill="#fff" opacity=".9"><ellipse cx="40" cy="25" rx="18" ry="6"/><ellipse cx="95" cy="18" rx="14" ry="5"/></g><path d="M20 140 Q100 105 180 140" stroke="#d9c6a1" stroke-width="5" fill="none"/></svg>
+        </div>
+        <h3>Lonavala</h3><p>misty hills, winding roads, you singing in the car</p></div></div>
+
+      <div class="mem reveal" style="--r:2.5deg"><div class="dot"></div><div class="card"><div class="tape"></div>
+        <div class="art" style="background:#f3e1c7"><span class="emo">☕</span></div>
+        <h3>All the cafés</h3><p>too many lattes, never enough time</p></div></div>
+
+      <div class="mem reveal" style="--r:-2deg"><div class="dot"></div><div class="card"><div class="tape"></div>
+        <div class="art" style="background:#f7d9c4"><span class="emo">📦</span></div>
+        <h3>Cozy Box</h3><p>the name says it all — that's what it felt like with you</p></div></div>
+
+      <div class="mem reveal" style="--r:3deg"><div class="dot"></div><div class="card"><div class="tape"></div>
+        <div class="art" style="background:#2f2a33;color:#fff"><span class="emo">🍣</span></div>
+        <h3>Akina</h3><p>you stealing from my plate. I let you. Always will.</p></div></div>
+
+      <div class="mem reveal" style="--r:-2.5deg"><div class="dot"></div><div class="card"><div class="tape"></div>
+        <div class="art" style="background:#f2d1cb"><span class="emo">🍝</span></div>
+        <h3>Si Nonna's</h3><p>good pasta, better company</p></div></div>
+
+      <div class="mem reveal" style="--r:2deg"><div class="dot"></div><div class="card"><div class="tape"></div>
+        <div class="art" style="background:#fbe6c2"><span class="emo">🍕</span></div>
+        <h3>Our pizza date</h3><p>flour everywhere, two cooks, one very wonky pizza — perfect</p></div></div>
+
+      <div class="mem reveal" style="--r:-1.5deg"><div class="dot"></div><div class="card"><div class="tape"></div>
+        <div class="art" style="background:linear-gradient(135deg,#f7c9d3,#f2b84b)"><span class="emo">💍</span></div>
+        <h3>16 July 2026</h3><p>the best "yes" I'll ever hear</p></div></div>
+    </div>
+    <div class="and-counting">and many more <span>.</span><span>.</span><span>.</span> still counting</div>
+
+    <div class="pizza-box reveal">
+      <h3>Remember our pizza? Make another one 🍕</h3>
+      <p>Pick a topping and tap the pizza.</p>
+      <div class="pizza" id="pizza"></div>
+      <div class="toppings" id="toppings">
+        <button data-t="🧀" class="on">🧀</button><button data-t="🍅">🍅</button><button data-t="🫑">🫑</button>
+        <button data-t="🍄">🍄</button><button data-t="🌽">🌽</button><button data-t="🫒">🫒</button><button data-t="❤️">❤️</button>
+      </div>
+      <div class="pizza-msg" id="pizzaMsg"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GIFTS ============ -->
+<section id="gifts">
+  <div class="reveal">
+    <div class="eyebrow">the shelf of you</div>
+    <h2 class="sec-title">Little things you<br>gave me.</h2>
+    <p class="sec-sub">Each one sits with me and reminds me of you. Tap them — they have something to say.</p>
+  </div>
+  <div class="shelf">
+    <div class="gift reveal" data-lines='["I&apos;m the good fat in his life 🥑","He hugs me when he misses you.","Ripe & ready to celebrate!"]'>
+      <svg viewBox="0 0 120 120"><ellipse cx="60" cy="66" rx="38" ry="48" fill="#4f6b22"/><ellipse cx="60" cy="68" rx="31" ry="40" fill="#cde08a"/><circle cx="60" cy="82" r="17" fill="#8a5a33"/><circle cx="50" cy="56" r="4" fill="#3a2433"/><circle cx="70" cy="56" r="4" fill="#3a2433"/><path d="M53 64 Q60 70 67 64" stroke="#3a2433" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="43" cy="64" r="4" fill="#f7a3b5" opacity=".7"/><circle cx="77" cy="64" r="4" fill="#f7a3b5" opacity=".7"/></svg>
+      <h3>Avocado</h3><div class="say"></div><div class="tap">tap me</div>
+    </div>
+    <div class="gift reveal" data-lines='["Accio Kinjal! ⚡","Mischief managed — he&apos;s all yours.","Ten points to the birthday girl!"]'>
+      <svg viewBox="0 0 120 120"><path d="M28 50 L60 6 L92 50 Z" fill="#4a2350"/><ellipse cx="60" cy="50" rx="40" ry="8" fill="#3a1d40"/><circle cx="60" cy="76" r="28" fill="#f3d2b8"/><circle cx="48" cy="74" r="10" fill="none" stroke="#3a2433" stroke-width="3"/><circle cx="72" cy="74" r="10" fill="none" stroke="#3a2433" stroke-width="3"/><line x1="58" y1="74" x2="62" y2="74" stroke="#3a2433" stroke-width="3"/><circle cx="48" cy="74" r="2.5" fill="#3a2433"/><circle cx="72" cy="74" r="2.5" fill="#3a2433"/><path d="M52 62 L57 56 L55 62 L60 58" stroke="#e8553b" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M52 92 Q60 97 68 92" stroke="#3a2433" stroke-width="2.5" fill="none" stroke-linecap="round"/><rect x="40" y="104" width="40" height="8" rx="3" fill="#a1252f"/><rect x="48" y="104" width="6" height="8" fill="#f2b84b"/><rect x="62" y="104" width="6" height="8" fill="#f2b84b"/></svg>
+      <h3>Harry Potter</h3><div class="say"></div><div class="tap">tap me</div>
+    </div>
+    <div class="gift reveal" data-lines='["Sloooowly saying… happy… birthday… 🦥","Lighting up his nights since day one.","Slow down, enjoy today. It&apos;s yours."]'>
+      <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="#f2b84b" opacity=".18"/><ellipse cx="60" cy="68" rx="34" ry="36" fill="#a07c5b"/><ellipse cx="60" cy="60" rx="25" ry="21" fill="#e8d3b5"/><ellipse cx="48" cy="58" rx="8" ry="6" fill="#5b3f2a" transform="rotate(-20 48 58)"/><ellipse cx="72" cy="58" rx="8" ry="6" fill="#5b3f2a" transform="rotate(20 72 58)"/><path d="M45 58 Q48 61 51 58" stroke="#fff" stroke-width="2" fill="none"/><path d="M69 58 Q72 61 75 58" stroke="#fff" stroke-width="2" fill="none"/><ellipse cx="60" cy="66" rx="4" ry="3" fill="#3a2433"/><path d="M55 72 Q60 76 65 72" stroke="#3a2433" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M90 20 L80 40 L88 40 L78 60" stroke="#f2b84b" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <h3>The Sloth Light</h3><div class="say"></div><div class="tap">tap me</div>
+    </div>
+    <div class="gift reveal" data-lines='["Fuel for the man who loves you 💪","You take care of him even in snacks.","Protein: 30g. Love: immeasurable."]'>
+      <svg viewBox="0 0 120 120"><g transform="rotate(-18 60 60)"><rect x="14" y="44" width="92" height="32" rx="6" fill="#2a1530"/><rect x="14" y="44" width="14" height="32" rx="4" fill="#e8748f"/><rect x="92" y="44" width="14" height="32" rx="4" fill="#e8748f"/><text x="60" y="66" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="15" fill="#f2b84b">MAX</text></g><g transform="rotate(12 60 80)"><rect x="22" y="78" width="78" height="22" rx="5" fill="#4a2350"/><text x="61" y="94" text-anchor="middle" font-family="DM Sans,sans-serif" font-weight="700" font-size="11" fill="#fdf6ec">PROTEIN</text></g></svg>
+      <h3>Max Protein</h3><div class="say"></div><div class="tap">tap me</div>
+    </div>
+  </div>
+  <p class="sec-sub reveal" style="margin-top:28px;font-family:Caveat;font-size:1.5rem">…and what not. You never come empty-handed. You never come empty-hearted.</p>
+</section>
+
+<!-- ============ LETTERS ============ -->
+<section id="letters">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">the letter box</div>
+      <h2 class="sec-title">You write to me.<br>Now I write back.</h2>
+      <p class="sec-sub">I'll confess — the first few notes you gave me, I misplaced. Then I got a box. Every one since lives in there. Open it.</p>
+    </div>
+    <div class="box-scene">
+      <div class="keepbox reveal" id="keepbox">
+        <span class="lost" style="left:-6%;top:10%">✉️</span>
+        <span class="lost" style="left:4%;top:30%;animation-delay:3s">💌</span>
+        <span class="lost" style="left:-2%;top:50%;animation-delay:6s">📝</span>
+        <div class="note" style="background:#fff3c4;--x:-70%;--y:-110%;--rot:-14deg" data-i="0"></div>
+        <div class="note" style="background:#fbe3e8;--x:-5%;--y:-140%;--rot:4deg" data-i="1"></div>
+        <div class="note" style="background:#dff0d0;--x:65%;--y:-105%;--rot:16deg" data-i="2"></div>
+        <div class="note" style="background:#e4dcf5;--x:0%;--y:-70%;--rot:-4deg" data-i="3"></div>
+        <div class="lid"></div>
+        <div class="base"></div>
+      </div>
+      <div class="reveal">
+        <div class="reader" id="reader">
+          <div class="hand reader-hint" id="readerText">Tap the box to open it…</div>
+        </div>
+        <button class="btn" id="nextNote">Open the box</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GIVER ============ -->
+<section id="giver">
+  <div class="reveal">
+    <div class="eyebrow">the giver</div>
+    <h2 class="sec-title">You give with<br>your whole heart.</h2>
+    <p class="sec-sub" style="margin:0 auto">So today, a few things I want to give back — starting with the truth about you.</p>
+  </div>
+  <div class="reasons" id="reasons">
+    <span class="reason">You love loudly 🫶</span>
+    <span class="reason">Your letters are my favourite thing to read</span>
+    <span class="reason">You remember every small thing</span>
+    <span class="reason">You never stop talking (Yapper 😌) — and I never want you to</span>
+    <span class="reason">You make every café feel like home</span>
+    <span class="reason">You take care of everyone, including me</span>
+    <span class="reason">Your laugh</span>
+    <span class="reason">You said yes 💍</span>
+    <span class="reason">You're my Bittu</span>
+  </div>
+</section>
+
+<!-- ============ CAKE ============ -->
+<section id="cake">
+  <div class="reveal">
+    <div class="eyebrow" style="color:var(--gold)">make a wish</div>
+    <h2 class="sec-title">26 candles for you.</h2>
+    <p class="sec-sub">Close your eyes, make a wish, then blow — tap the button, tap each candle, or actually blow into your mic.</p>
+  </div>
+  <div class="cake-wrap reveal">
+    <div class="candles" id="candles"></div>
+    <div class="cake"><div class="cake-name">Kinjal · 26</div></div>
+    <div class="plate"></div>
+  </div>
+  <div class="cake-status" id="cakeStatus"></div>
+  <div class="blow-row">
+    <button class="btn light" id="blowBtn">Blow 💨</button>
+    <button class="btn ghost" id="micBtn">Use mic 🎤</button>
+    <button class="btn ghost" id="relight" style="display:none">Light again</button>
+  </div>
+</section>
+
+<!-- ============ FINALE ============ -->
+<section id="finale">
+  <canvas id="sky2" style="position:absolute;inset:0;width:100%;height:100%"></canvas>
+  <div class="inner reveal">
+    <div class="heart-beat">❤️</div>
+    <h2>Happy 26th,<br><em>my Kinjal.</em></h2>
+    <p>To the girl who writes me letters, who fills my shelf with avocados and sloths, who turns pizza nights into memories and ordinary days into ones I want to keep.</p>
+    <p>This year you're not just my girlfriend — you're my fiancée. And every year after this, I get to be right here, celebrating you.</p>
+    <div class="sign">Forever yours,<br>Jay</div>
+    <button class="btn light" id="loveBtn" style="margin-top:26px">Tap for more love</button>
+  </div>
+</section>
+
+<footer>Made with a lot of love for Bittu · 2026</footer>
+
+<script>
+(() => {
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const fx = $('#fx');
+
+/* ---------- floating hearts / confetti ---------- */
+function burst(n = 40, chars = ['❤️','💖','💕','✨','🎉','💗','🥑']) {
+  for (let i = 0; i < n; i++) {
+    const el = document.createElement('span');
+    el.className = 'fheart';
+    el.textContent = chars[Math.random()*chars.length|0];
+    el.style.left = Math.random()*100 + 'vw';
+    el.style.fontSize = (14 + Math.random()*22) + 'px';
+    el.style.setProperty('--dx', (Math.random()*160-80) + 'px');
+    el.style.setProperty('--rot', (Math.random()*360-180) + 'deg');
+    el.style.animationDuration = (3 + Math.random()*4) + 's';
+    el.style.animationDelay = (Math.random()*1.2) + 's';
+    fx.appendChild(el);
+    setTimeout(() => el.remove(), 9000);
+  }
+}
+
+/* ---------- soft music (WebAudio, no files) ---------- */
+let actx, playing = false, loopTimer;
+const melody = [ // Happy Birthday (traditional, public domain)
+  [392,.75],[392,.25],[440,1],[392,1],[523,1],[494,2],
+  [392,.75],[392,.25],[440,1],[392,1],[587,1],[523,2],
+  [392,.75],[392,.25],[784,1],[659,1],[523,1],[494,1],[440,2],
+  [698,.75],[698,.25],[659,1],[523,1],[587,1],[523,3]
+];
+function playTune() {
+  if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+  let t = actx.currentTime + .1; const beat = .42;
+  melody.forEach(([f, d]) => {
+    const o = actx.createOscillator(), g = actx.createGain();
+    o.type = 'triangle'; o.frequency.value = f;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.12, t + .03);
+    g.gain.exponentialRampToValueAtTime(.001, t + d*beat*.95);
+    o.connect(g).connect(actx.destination); o.start(t); o.stop(t + d*beat);
+    t += d*beat;
+  });
+  const total = melody.reduce((a, [, d]) => a + d, 0) * beat * 1000 + 2500;
+  loopTimer = setTimeout(() => playing && playTune(), total);
+}
+const musicBtn = $('#musicBtn');
+musicBtn.onclick = () => {
+  playing = !playing; musicBtn.textContent = playing ? '♪' : '🔇';
+  if (playing) { actx && actx.resume(); playTune(); } else { clearTimeout(loopTimer); actx && actx.suspend(); }
+};
+
+/* ---------- gate ---------- */
+const env = $('#env');
+function openGate() {
+  if (env.classList.contains('open')) return;
+  env.classList.add('open');
+  setTimeout(() => {
+    $('#gate').classList.add('gone'); document.body.classList.remove('locked');
+    burst(70); startNick(); musicBtn.classList.add('show');
+    playing = true; playTune();
+  }, 1300);
+}
+env.addEventListener('click', openGate);
+env.addEventListener('keydown', e => (e.key === 'Enter' || e.key === ' ') && openGate());
+
+/* ---------- nickname typer ---------- */
+const nicks = ['Kinjal', 'Bittu 🧸', 'Yapper 🗣️', 'my fiancée 💍', 'my favourite person'];
+function startNick() {
+  const el = $('#nick'); let i = 0, j = 0, del = false;
+  (function tick() {
+    const w = nicks[i];
+    el.textContent = w.slice(0, j);
+    if (!del && j < w.length) j++;
+    else if (!del) { del = true; return setTimeout(tick, 1600); }
+    else if (j > 0) j--;
+    else { del = false; i = (i + 1) % nicks.length; }
+    setTimeout(tick, del ? 45 : 95);
+  })();
+}
+
+/* ---------- starry sky canvas ---------- */
+function sky(canvas) {
+  const c = canvas, x = c.getContext('2d'); let W, H, stars;
+  const size = () => {
+    W = c.width = c.offsetWidth * devicePixelRatio; H = c.height = c.offsetHeight * devicePixelRatio;
+    stars = Array.from({length: 120}, () => ({x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.6*devicePixelRatio + .3, p: Math.random()*6.28, s: .01 + Math.random()*.03}));
+  };
+  size(); addEventListener('resize', size);
+  let shoot = null;
+  (function draw() {
+    x.clearRect(0, 0, W, H);
+    stars.forEach(s => { s.p += s.s; x.globalAlpha = .4 + Math.sin(s.p)*.4; x.fillStyle = '#fff'; x.beginPath(); x.arc(s.x, s.y, s.r, 0, 6.28); x.fill(); });
+    if (!shoot && Math.random() < .006) shoot = {x: Math.random()*W*.7, y: Math.random()*H*.3, l: 0};
+    if (shoot) {
+      shoot.l += 14*devicePixelRatio; x.globalAlpha = 1 - shoot.l/(W*.5);
+      const g = x.createLinearGradient(shoot.x + shoot.l, shoot.y + shoot.l*.4, shoot.x + shoot.l - 80, shoot.y + shoot.l*.4 - 32);
+      g.addColorStop(0, '#fff'); g.addColorStop(1, 'transparent');
+      x.strokeStyle = g; x.lineWidth = 2*devicePixelRatio; x.beginPath();
+      x.moveTo(shoot.x + shoot.l, shoot.y + shoot.l*.4); x.lineTo(shoot.x + shoot.l - 80, shoot.y + shoot.l*.4 - 32); x.stroke();
+      if (shoot.l > W*.5) shoot = null;
+    }
+    x.globalAlpha = 1; requestAnimationFrame(draw);
+  })();
+}
+sky($('#sky')); sky($('#sky2'));
+
+/* ---------- scroll reveals ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    e.target.classList.add('in'); io.unobserve(e.target);
+    if (e.target.id === 'reasons') popReasons();
+  }
+}), {threshold: .18});
+$$('.reveal').forEach(el => io.observe(el)); io.observe($('#reasons'));
+
+function popReasons() { $$('.reason').forEach((r, i) => setTimeout(() => r.classList.add('in'), i*180)); }
+
+/* ---------- engagement counter ---------- */
+const engaged = new Date('2026-07-16T00:00:00+05:30');
+function tickCounter() {
+  let s = Math.max(0, Math.floor((Date.now() - engaged) / 1000));
+  $('#cDays').textContent = Math.floor(s/86400);
+  $('#cHours').textContent = Math.floor(s%86400/3600);
+  $('#cMins').textContent = Math.floor(s%3600/60);
+  $('#cSecs').textContent = s%60;
+}
+tickCounter(); setInterval(tickCounter, 1000);
+
+/* ---------- memory trail path ---------- */
+function drawTrail() {
+  const trail = $('#trail'), svg = trail.querySelector('svg'), mobile = innerWidth <= 760;
+  const h = trail.offsetHeight; svg.setAttribute('viewBox', `0 0 40 ${h}`); svg.style.height = h + 'px';
+  let d = `M20 0`;
+  for (let y = 0; y < h; y += 120) d += mobile ? ` L20 ${y+120}` : ` Q${(y/120)%2 ? 40 : 0} ${y+60} 20 ${y+120}`;
+  $('#trailPath').setAttribute('d', d);
+}
+addEventListener('load', drawTrail); addEventListener('resize', drawTrail);
+
+/* ---------- pizza ---------- */
+let topping = '🧀', placed = 0;
+$('#toppings').onclick = e => {
+  const b = e.target.closest('button'); if (!b) return;
+  $$('#toppings button').forEach(x => x.classList.remove('on')); b.classList.add('on'); topping = b.dataset.t;
+};
+const pizzaLines = ['Chef Kinjal at work 👩‍🍳', 'Wonky? Perfect.', 'Just like our date night', 'Jay would eat this whole thing', 'Bon appétit, Bittu!'];
+$('#pizza').addEventListener('click', e => {
+  const r = e.currentTarget.getBoundingClientRect(), cx = e.clientX - r.left - r.width/2, cy = e.clientY - r.top - r.height/2;
+  if (Math.hypot(cx, cy) > r.width*.36) return;
+  const t = document.createElement('span'); t.className = 'top'; t.textContent = topping;
+  t.style.left = (e.clientX - r.left) + 'px'; t.style.top = (e.clientY - r.top) + 'px';
+  e.currentTarget.appendChild(t); placed++;
+  if (placed % 6 === 0) $('#pizzaMsg').textContent = pizzaLines[(placed/6 - 1) % pizzaLines.length];
+});
+
+/* ---------- gifts ---------- */
+$$('.gift').forEach(g => {
+  const lines = JSON.parse(g.dataset.lines); let i = 0;
+  g.addEventListener('click', () => {
+    g.querySelector('.say').textContent = lines[i++ % lines.length];
+    g.classList.remove('squish'); void g.offsetWidth; g.classList.add('squish');
+    const r = g.getBoundingClientRect();
+    for (let k = 0; k < 6; k++) {
+      const h = document.createElement('span'); h.className = 'fheart'; h.textContent = '💗';
+      h.style.left = (r.left + r.width/2 + (Math.random()*60-30)) + 'px'; h.style.bottom = (innerHeight - r.top) + 'px';
+      h.style.setProperty('--dx', (Math.random()*80-40)+'px'); h.style.setProperty('--rot', '0deg');
+      h.style.animationDuration = '2.5s'; fx.appendChild(h); setTimeout(() => h.remove(), 2600);
+    }
+  });
+});
+
+/* ---------- letters ---------- */
+const letters = [
+  `Dear Bittu,\n\nYou've written me so many notes. I'm sorry I lost the first few — I didn't know yet that I'd want to keep every word you ever gave me.`,
+  `Dear Yapper,\n\nNever stop talking. Your voice is the soundtrack of my favourite days — Lonavala, the cafés, that pizza we made.`,
+  `Dear Kinjal,\n\nYou give and give and give. Today it's my turn. Let me spoil you a little — okay, a lot.`,
+  `Dear future wife,\n\n16 July was the best day of my life. Happy 26th. Here's to every birthday after this one, together.`
+];
+const box = $('#keepbox'), reader = $('#readerText'), nextBtn = $('#nextNote'); let li = -1;
+function typeLetter(txt) {
+  reader.classList.remove('reader-hint'); reader.textContent = ''; let k = 0;
+  clearInterval(reader._t);
+  reader._t = setInterval(() => { reader.textContent = txt.slice(0, ++k); if (k >= txt.length) { clearInterval(reader._t); reader.insertAdjacentHTML('beforeend', '<div class="from">— Jay ♥</div>'); } }, 28);
+}
+function nextLetter(i) {
+  if (!box.classList.contains('open')) { box.classList.add('open'); burst(18, ['💌','✉️','💕']); }
+  li = typeof i === 'number' ? i : (li + 1) % letters.length;
+  typeLetter(letters[li]); nextBtn.textContent = 'Read the next one';
+}
+box.addEventListener('click', e => { const n = e.target.closest('.note'); nextLetter(n ? +n.dataset.i : undefined); });
+nextBtn.onclick = () => nextLetter();
+
+/* ---------- cake ---------- */
+const candlesEl = $('#candles'), status = $('#cakeStatus');
+for (let i = 0; i < 26; i++) {
+  const c = document.createElement('div'); c.className = 'candle'; c.innerHTML = '<div class="flame"></div>';
+  c.style.height = (28 + Math.random()*10) + 'px';
+  c.onclick = () => { c.classList.add('out'); checkCake(); };
+  candlesEl.appendChild(c);
+}
+function checkCake() {
+  const lit = $$('.candle:not(.out)').length;
+  status.textContent = lit ? `${26 - lit} down, ${lit} to go…` : '';
+  if (!lit) {
+    status.textContent = 'Your wish is on its way, Kinjal ✨';
+    burst(90, ['🎉','🎊','✨','💖','🎂','🥑','⚡']); $('#relight').style.display = 'inline-block'; stopMic();
+  }
+}
+function blowSome(k) {
+  const lit = $$('.candle:not(.out)').sort(() => Math.random() - .5).slice(0, k);
+  lit.forEach((c, i) => setTimeout(() => { c.classList.add('out'); checkCake(); }, i*60));
+}
+$('#blowBtn').onclick = () => blowSome(26);
+$('#relight').onclick = () => { $$('.candle').forEach(c => c.classList.remove('out')); status.textContent = 'Another wish? Go on 🕯️'; $('#relight').style.display = 'none'; };
+
+let micStream, micRAF;
+$('#micBtn').onclick = async () => {
+  try {
+    micStream = await navigator.mediaDevices.getUserMedia({audio: true});
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    actx.resume();
+    const an = actx.createAnalyser(); an.fftSize = 512; actx.createMediaStreamSource(micStream).connect(an);
+    const data = new Uint8Array(an.fftSize); status.textContent = 'Blow into your mic 🌬️';
+    (function listen() {
+      an.getByteTimeDomainData(data);
+      let sum = 0; for (const v of data) sum += (v - 128) ** 2;
+      if (Math.sqrt(sum / data.length) > 22) blowSome(2);
+      micRAF = requestAnimationFrame(listen);
+    })();
+  } catch { status.textContent = 'No mic? Just tap Blow 💨'; }
+};
+function stopMic() { cancelAnimationFrame(micRAF); micStream && micStream.getTracks().forEach(t => t.stop()); micStream = null; }
+
+/* ---------- finale ---------- */
+$('#loveBtn').onclick = () => burst(80);
+})();
+</script>
+</body>
+</html>
