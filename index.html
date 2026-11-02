@@ -194,12 +194,18 @@ button,input{font:inherit;color:inherit}
 .idli{position:absolute;z-index:5}
 .idli circle,.idli ellipse,.idli path{fill:none;stroke:var(--ink);stroke-width:2.2;stroke-linecap:round}
 
+/* ===== photo plates ===== */
+.plate{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;will-change:transform}
+.plate-shade{position:absolute;inset:0;z-index:0;pointer-events:none}
+.glowcut2{filter:drop-shadow(0 0 2px rgba(255,255,255,.9)) drop-shadow(0 0 30px rgba(255,200,170,.35)) drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+
 /* ===== 4 AGE ===== */
-#age{--bg:var(--cobalt);color:var(--cream)}
-.ag-num{position:absolute;left:0;right:0;top:12cqh;text-align:center;font-size:84cqw;color:var(--cream);font-variant-numeric:tabular-nums;z-index:2}
-.ag-num.o{color:transparent;-webkit-text-stroke:.4cqw var(--cream);z-index:1}
-.ag-script{position:absolute;left:0;right:0;top:52cqh;text-align:center;font-family:"Permanent Marker";font-size:13cqw;color:#fff;transform:rotate(-8deg);z-index:4;clip-path:inset(0 100% 0 0)}
-.ticket{position:absolute;left:8cqw;bottom:9cqh;width:84cqw;display:flex;background:var(--cream);color:var(--ink);z-index:5;box-shadow:0 14px 30px rgba(0,0,0,.35);
+#age{--bg:#1a0402;color:var(--cream)}
+.ag-num{position:absolute;left:0;right:0;top:49cqh;text-align:center;font-size:58cqw;mix-blend-mode:screen;color:var(--cream);font-variant-numeric:tabular-nums;z-index:2}
+.ag-num.o{color:transparent;-webkit-text-stroke:.35cqw rgba(255,226,190,.9);z-index:1;mix-blend-mode:normal}
+.ag-k{position:absolute;top:5cqh;left:6cqw;right:6cqw;display:flex;justify-content:space-between;font:700 2.4cqw "Space Mono";letter-spacing:.2em;text-transform:uppercase;color:#ffd9b0;z-index:3}
+.ag-script{position:absolute;left:0;right:0;top:11cqh;text-shadow:0 4px 20px rgba(0,0,0,.6);text-align:center;font-family:"Permanent Marker";font-size:13cqw;color:#fff;transform:rotate(-8deg);z-index:4;clip-path:inset(0 100% 0 0)}
+.ticket{position:absolute;left:8cqw;bottom:4cqh;width:84cqw;display:flex;background:var(--cream);color:var(--ink);z-index:5;box-shadow:0 14px 30px rgba(0,0,0,.35);
   -webkit-mask:radial-gradient(circle at 70% 0,transparent 3cqw,#000 3.1cqw) top/100% 51% no-repeat,radial-gradient(circle at 70% 100%,transparent 3cqw,#000 3.1cqw) bottom/100% 51% no-repeat}
 .ticket .l{flex:7;padding:4cqw;border-right:2px dashed rgba(0,0,0,.35)}
 .ticket .r{flex:3;padding:4cqw 2cqw;display:grid;place-items:center;text-align:center}
@@ -224,18 +230,20 @@ button,input{font:inherit;color:inherit}
 .cs-zoom .cap{position:absolute;left:6cqw;bottom:10cqh;font-family:"Permanent Marker";color:#fff;font-size:10cqw;line-height:.95;text-shadow:0 4px 20px rgba(0,0,0,.6)}
 
 /* ===== 6 TOUR ===== */
-#tour{--bg:var(--pink)}
+#tour{--bg:#2a0709;color:var(--cream)}
+#tour .t-row{border-bottom-color:rgba(242,226,182,.55)}
+#tour .sold{color:#ff4a4a;border-color:#ff4a4a;mix-blend-mode:normal}
 .t-hd{position:absolute;top:5cqh;left:6cqw;right:6cqw;text-align:center}
 .t-hd .k{font:700 2.6cqw "Space Mono";letter-spacing:.3em;text-transform:uppercase}
 .t-hd .big{font-family:"Rubik Mono One";font-size:12cqw;line-height:.95;margin-top:2cqw;text-transform:uppercase}
 .t-hd .sub{font-family:"Instrument Serif";font-style:italic;font-size:5.4cqw;margin-top:1cqw}
-.t-list{position:absolute;top:calc(5cqh + 44cqw);left:6cqw;right:6cqw;z-index:3}
+.t-list{position:absolute;top:calc(5cqh + 44cqw);left:6cqw;right:36cqw;z-index:3}
 .t-row{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding:1.8cqw 0;position:relative}
-.t-row b{font-family:"Anton";font-weight:400;font-size:7.6cqw;text-transform:uppercase;line-height:1}
+.t-row b{font-family:"Anton";font-weight:400;font-size:6.4cqw;text-transform:uppercase;line-height:1}
 .t-row span{font:700 2.4cqw "Space Mono";letter-spacing:.1em;text-transform:uppercase;text-align:right}
-.sold{position:absolute;right:16cqw;top:50%;font:400 5.4cqw "Anton";color:var(--red);border:.6cqw solid var(--red);padding:.6cqw 2cqw;transform:translateY(-50%) rotate(-12deg) scale(2.4);opacity:0;mix-blend-mode:multiply;letter-spacing:.04em}
-.t-cut{position:absolute;left:-12cqw;bottom:-2cqh;height:40cqh;z-index:2;transform:rotate(-6deg)}
-.t-foot{position:absolute;right:6cqw;bottom:6cqh;text-align:right;font-family:"Permanent Marker";font-size:6cqw;color:var(--ink);z-index:4;line-height:1.05}
+.sold{position:absolute;right:1cqw;top:50%;font:400 5.4cqw "Anton";color:var(--red);border:.6cqw solid var(--red);padding:.6cqw 2cqw;transform:translateY(-50%) rotate(-12deg) scale(2.4);opacity:0;mix-blend-mode:multiply;letter-spacing:.04em}
+.t-cut{position:absolute;right:-8cqw;bottom:0;height:64cqh;z-index:2}
+.t-foot{position:absolute;left:6cqw;bottom:5cqh;text-align:left;font-family:"Permanent Marker";font-size:6cqw;color:#ffcf9a;z-index:4;line-height:1.05}
 
 /* ===== 7 NEWSPAPER ===== */
 #news{--bg:var(--news)}
@@ -256,19 +264,46 @@ button,input{font:inherit;color:inherit}
 .ring-doodle path{fill:none;stroke:var(--red);stroke-width:3;stroke-linecap:round}
 
 /* ===== 8 COLLECTION ===== */
-#coll{--bg:var(--green);color:var(--cream)}
-.co-hd{position:absolute;top:5cqh;left:6cqw;right:6cqw}
+#coll{--bg:#140c08;color:var(--cream)}
+.co-hd{position:absolute;bottom:13cqh;left:6cqw;right:6cqw;z-index:5;text-shadow:0 4px 24px rgba(0,0,0,.7)}
 .co-hd .k{font:700 2.6cqw "Space Mono";letter-spacing:.3em;text-transform:uppercase;opacity:.8}
 .co-hd .big{font-family:"Abril Fatface";font-size:13cqw;line-height:.95;margin-top:1cqw}
 .co-hd .big em{font-family:"Instrument Serif";font-style:italic;color:var(--mustard)}
-.sticker{position:absolute;width:36cqw;z-index:4;cursor:pointer}
+.sticker{position:absolute;width:30cqw;z-index:4;cursor:pointer}
 .sticker .s{filter:drop-shadow(1cqw 0 0 #fff) drop-shadow(-1cqw 0 0 #fff) drop-shadow(0 1cqw 0 #fff) drop-shadow(0 -1cqw 0 #fff) drop-shadow(0 14px 18px rgba(0,0,0,.45))}
 .sticker svg{width:100%;height:auto;display:block}
 .tag{position:absolute;left:58%;top:62%;background:var(--cream);color:var(--ink);padding:1.4cqw 2.6cqw 1.4cqw 4.4cqw;font:700 2.4cqw "Space Mono";letter-spacing:.06em;text-transform:uppercase;line-height:1.25;white-space:nowrap;transform:rotate(-8deg);
   clip-path:polygon(14% 0,100% 0,100% 100%,14% 100%,0 50%);box-shadow:0 4px 10px rgba(0,0,0,.3)}
-.tag::before{content:"";position:absolute;left:4.5%;top:50%;width:1.6cqw;height:1.6cqw;margin-top:-.8cqw;border-radius:50%;background:var(--green)}
+.tag::before{content:"";position:absolute;left:4.5%;top:50%;width:1.6cqw;height:1.6cqw;margin-top:-.8cqw;border-radius:50%;background:#140c08}
 .tag b{display:block;font-family:"Anton";font-weight:400;font-size:4.4cqw;letter-spacing:.02em;color:var(--red)}
-.co-foot{position:absolute;left:6cqw;right:6cqw;bottom:7cqh;font-family:"Instrument Serif";font-style:italic;font-size:6cqw;line-height:1.05;text-align:center}
+.co-foot{position:absolute;left:6cqw;right:6cqw;bottom:4cqh;z-index:5;text-shadow:0 2px 14px rgba(0,0,0,.8);font-family:"Instrument Serif";font-style:italic;font-size:6cqw;line-height:1.05;text-align:center}
+
+/* ===== COVER STAR (duotone) ===== */
+#muse{--bg:#151112;color:#fff}
+#muse .weave{position:absolute;inset:0;background:
+  repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 6px),radial-gradient(ellipse at 50% 40%,#2a1a1c,#0c0a0b 75%)}
+.mu-title{position:absolute;top:4cqh;left:5cqw;right:5cqw;z-index:6;line-height:.8}
+.mu-title .a{font-family:"Instrument Serif";font-size:15cqw;color:#fff;letter-spacing:.02em}
+.mu-title .b{display:block;font-family:"Caveat";font-weight:700;font-size:24cqw;color:#fff;margin:-5cqw 0 0 14cqw;transform:rotate(-6deg);text-shadow:0 4px 20px rgba(0,0,0,.6)}
+.mu-p{position:absolute;width:29cqw;overflow:hidden;z-index:1;box-shadow:0 20px 40px rgba(0,0,0,.6)}
+.mu-p img{width:100%;height:100%;object-fit:cover}
+.mu-cut{position:absolute;left:50%;bottom:0;height:68cqh;margin-left:calc(var(--w,300px)/-2);z-index:3;filter:drop-shadow(0 26px 30px rgba(0,0,0,.7))}
+.mu-lab{position:absolute;z-index:5;background:#f3ead8;color:#7a1018;font:800 4.2cqw/1.05 "Manrope";padding:1.6cqw 2.8cqw;border-radius:2cqw;box-shadow:0 0 0 .9cqw #fff,0 10px 20px rgba(0,0,0,.45);white-space:nowrap}
+.mu-k{position:absolute;bottom:3cqh;left:5cqw;right:5cqw;display:flex;justify-content:space-between;font:700 2.2cqw "Space Mono";letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);z-index:6}
+
+/* ===== GARBA ISSUE (torn strip) ===== */
+#garba{--bg:#5a0a0e;color:var(--cream)}
+.gb-mast{position:absolute;top:3.5cqh;left:0;right:0;text-align:center;z-index:2;font-family:"Abril Fatface";font-size:25cqw;line-height:.9;color:#f6e9d8;letter-spacing:.02em;text-shadow:0 6px 30px rgba(0,0,0,.4)}
+.gb-sub{position:absolute;top:calc(3.5cqh + 24cqw);left:6cqw;right:6cqw;display:flex;justify-content:space-between;font:700 2.3cqw "Space Mono";letter-spacing:.18em;text-transform:uppercase;color:#ffd7c4;z-index:2;border-top:1px solid rgba(255,230,210,.5);padding-top:1.2cqw}
+.gb-cut{position:absolute;left:50%;bottom:0;height:84cqh;margin-left:calc(var(--w,300px)/-2);z-index:3;filter:drop-shadow(0 0 2px rgba(255,255,255,.7)) drop-shadow(0 0 40px rgba(255,190,170,.45)) drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.gb-strip{position:absolute;left:-6cqw;right:-6cqw;top:46cqh;height:15cqw;z-index:4;background:#efe6d2;display:flex;align-items:center;justify-content:center;gap:3cqw;transform:rotate(-5deg);box-shadow:0 10px 24px rgba(0,0,0,.45);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 5 L12 2 L25 6 L38 1 L52 5 L66 2 L80 6 L95 1 L110 4 L126 1 L140 6 L156 2 L170 5 L186 1 L200 5 L216 2 L232 6 L248 1 L262 5 L278 2 L294 6 L310 1 L326 5 L342 2 L358 6 L374 1 L388 4 L400 2 V58 L386 55 L372 59 L356 54 L340 58 L326 55 L310 59 L294 54 L278 58 L262 55 L248 59 L232 54 L216 58 L200 55 L186 59 L170 54 L156 58 L140 55 L126 59 L110 54 L95 58 L80 55 L66 59 L52 54 L38 58 L25 55 L12 59 L0 55Z'/%3E%3C/svg%3E") 0 0/100% 100%;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 60' preserveAspectRatio='none'%3E%3Cpath d='M0 5 L12 2 L25 6 L38 1 L52 5 L66 2 L80 6 L95 1 L110 4 L126 1 L140 6 L156 2 L170 5 L186 1 L200 5 L216 2 L232 6 L248 1 L262 5 L278 2 L294 6 L310 1 L326 5 L342 2 L358 6 L374 1 L388 4 L400 2 V58 L386 55 L372 59 L356 54 L340 58 L326 55 L310 59 L294 54 L278 58 L262 55 L248 59 L232 54 L216 58 L200 55 L186 59 L170 54 L156 58 L140 55 L126 59 L110 54 L95 58 L80 55 L66 59 L52 54 L38 58 L25 55 L12 59 L0 55Z'/%3E%3C/svg%3E") 0 0/100% 100%}
+.gb-strip b{font:400 10cqw "Anton";color:var(--ink);letter-spacing:.02em;text-transform:uppercase}
+.gb-strip i{font-family:"Instrument Serif";font-style:italic;font-size:6.4cqw;color:var(--red)}
+.gb-line{position:absolute;z-index:5;max-width:34cqw;line-height:1.05;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.gb-line b{display:block;font:400 6cqw "Anton";text-transform:uppercase;color:#fff}
+.gb-line span{font-family:"Instrument Serif";font-style:italic;font-size:4.2cqw;color:#ffd7c4}
 
 /* ===== 9 LETTER ===== */
 #letter{--bg:var(--kraft);height:auto;min-height:100svh;padding:9vh 0 12vh}
@@ -385,7 +420,7 @@ button,input{font:inherit;color:inherit}
       <div class="c-issue" id="cIssue"><span>issue nº 26</span><span>the birthday issue</span><span>by jay</span></div>
       <img class="c-cut halftone" id="cCut" src="img/forehead-halftone.webp" alt="Jay kissing Kinjal's forehead">
       <div class="c-line" id="cl1" style="left:5cqw;top:calc(5cqh + 34cqw)"><span class="k">exclusive</span><b>the girl who never stops talking</b><span>(and why he never wants her to)</span></div>
-      <div class="c-line" id="cl2" style="right:5cqw;top:calc(5cqh + 34cqw);text-align:right"><b>26 reasons</b><span>he's completely obsessed — p. 10</span></div>
+      <div class="c-line" id="cl2" style="right:5cqw;top:calc(5cqh + 34cqw);text-align:right"><b>26 reasons</b><span>he's completely obsessed — p. 12</span></div>
       <div class="c-line" id="cl3" style="left:5cqw;bottom:14cqh"><b>where it all started</b><span>two cups of coffee change everything</span></div>
       <div class="burst" id="cBurst" style="right:4cqw;bottom:22cqh;width:24cqw;height:24cqw;background:var(--mustard);font-size:6cqw">NOW<br>26!</div>
       <div class="barcode"><i></i><span>₹ PRICELESS</span></div>
@@ -428,6 +463,8 @@ button,input{font:inherit;color:inherit}
   <!-- 4 AGE -->
   <section class="poster" id="age" data-f="p. 04 — twenty six">
     <div class="ab">
+      <img class="plate" id="agPlate" src="img/k-ember.jpg" alt="Kinjal laughing, glowing in warm red light">
+      <div class="ag-k"><span>chapter 26</span><span>kinjal · the birthday issue</span></div>
       <div class="ag-num anton o">26</div>
       <div class="ag-num anton" id="agNum">0</div>
       <div class="ag-script" id="agScript">years of you</div>
@@ -438,8 +475,27 @@ button,input{font:inherit;color:inherit}
     </div>
   </section>
 
+
+  <!-- COVER STAR -->
+  <section class="poster" id="muse" data-f="p. 05 — cover star">
+    <div class="side l" style="color:#fff">cover star</div><div class="side r" style="color:#fff">kinjal</div>
+    <div class="ab">
+      <div class="weave"></div>
+      <div class="mu-title" id="muTitle"><span class="a">Kinjal</span><span class="b">my Bittu</span></div>
+      <div class="mu-p" id="muP1" style="left:3cqw;top:30cqh;height:44cqh"><img src="img/k-duo1.jpg" alt=""></div>
+      <div class="mu-p" id="muP2" style="left:35.5cqw;top:25cqh;height:40cqh"><img src="img/k-duo2.jpg" alt=""></div>
+      <div class="mu-p" id="muP3" style="left:68cqw;top:30cqh;height:44cqh"><img src="img/k-duo3.jpg" alt=""></div>
+      <img class="mu-cut" id="muCut" src="img/k-red2.webp" alt="Kinjal in a red top">
+      <div class="mu-lab" style="left:4cqw;top:47cqh;transform:rotate(-4deg)">Professional<br>Yapper</div>
+      <div class="mu-lab" style="right:4cqw;top:56cqh;transform:rotate(3deg)">Chef Kinjal</div>
+      <div class="mu-lab" style="left:3cqw;top:72cqh;transform:rotate(2deg)">Two-coffee<br>girl ☕</div>
+      <div class="mu-lab" style="right:3cqw;top:80cqh;transform:rotate(-3deg)">Jay's<br>favourite</div>
+      <div class="mu-k"><span>cover star</span><span>issue nº 26</span></div>
+    </div>
+  </section>
+
   <!-- 5 CONTACT SHEET -->
-  <section class="poster" id="contact" data-f="p. 05 — contact sheet">
+  <section class="poster" id="contact" data-f="p. 06 — contact sheet">
     <div class="side l" style="color:#fff">kinjal 400</div><div class="side r" style="color:#fff">contact sheet</div>
     <div class="ab">
       <div class="cs-hd"><b>CONTACT<br>SHEET</b><span style="text-align:right">kinjal 400<br>roll 26 · by jay</span></div>
@@ -449,18 +505,34 @@ button,input{font:inherit;color:inherit}
   </section>
 
   <!-- 6 TOUR -->
-  <section class="poster" id="tour" data-f="p. 06 — the love tour">
-    <div class="side l">the love tour</div><div class="side r">sold out</div>
+  <section class="poster" id="tour" data-f="p. 07 — the love tour">
+    <div class="side l" style="color:#fff">the love tour</div><div class="side r" style="color:#fff">sold out</div>
     <div class="ab">
+      <img class="plate" id="tPlate" src="img/k-ghostplate.jpg" alt="">
       <div class="t-hd"><div class="k">kinjal & jay present</div><div class="big">The Love<br>Tour</div><div class="sub">live, in person, every weekend</div></div>
       <div class="t-list" id="tList"></div>
-      <img class="t-cut halftone" id="tCut" src="img/night-halftone.webp" alt="">
+      <img class="t-cut glowcut2" id="tCut" src="img/k-red1.webp" alt="Kinjal">
       <div class="t-foot" id="tFoot">+ more dates<br>forever ♥</div>
     </div>
   </section>
 
+
+  <!-- GARBA ISSUE -->
+  <section class="poster" id="garba" data-f="p. 08 — the garba issue">
+    <div class="side l" style="color:#fff">garba queen</div><div class="side r" style="color:#fff">dandiya edition</div>
+    <div class="ab">
+      <img class="plate" id="gbPlate" src="img/k-garbaplate.jpg" alt="">
+      <div class="gb-mast" id="gbMast">KINJAL</div>
+      <div class="gb-sub"><span>the garba issue</span><span>navratri special</span></div>
+      <img class="gb-cut" id="gbCut" src="img/k-garba.webp" alt="Kinjal in a black lehenga at garba">
+      <div class="gb-strip" id="gbStrip"><b>Garba Queen</b><i>spin. smile. repeat.</i></div>
+      <div class="gb-line" id="gbL1" style="left:5cqw;top:64cqh"><b>1,000+ spins</b><span>and still not dizzy</span></div>
+      <div class="gb-line" id="gbL2" style="right:5cqw;top:72cqh;text-align:right"><b>1 dupatta</b><span>held on to (by Jay)</span></div>
+    </div>
+  </section>
+
   <!-- 7 NEWSPAPER -->
-  <section class="poster" id="news" data-f="p. 07 — breaking news">
+  <section class="poster" id="news" data-f="p. 09 — breaking news">
     <div class="side l">extra! extra!</div><div class="side r">16 · 07 · 2026</div>
     <div class="ab">
       <div class="np-mast"><div class="t">The Daily Us</div><div class="meta"><span>vol. 26</span><span>special edition</span><span>16 july 2026</span></div></div>
@@ -478,9 +550,10 @@ button,input{font:inherit;color:inherit}
   </section>
 
   <!-- 8 COLLECTION -->
-  <section class="poster" id="coll" data-f="p. 08 — the collection">
+  <section class="poster" id="coll" data-f="p. 10 — the collection">
     <div class="side l" style="color:#fff">the giver</div><div class="side r" style="color:#fff">1 of 1</div>
     <div class="ab">
+      <img class="plate" id="coPlate" src="img/k-amber.jpg" alt="Kinjal sipping coffee">
       <div class="co-hd"><div class="k">ss26 · gifts from her</div><div class="big">The Kinjal <em>Collection</em></div></div>
       <div id="stickers"></div>
       <div class="co-foot" id="coFoot">she never comes empty-handed. never empty-hearted.</div>
@@ -488,7 +561,7 @@ button,input{font:inherit;color:inherit}
   </section>
 
   <!-- 9 LETTER -->
-  <section class="poster" id="letter" data-f="p. 09 — a letter">
+  <section class="poster" id="letter" data-f="p. 11 — a letter">
     <div class="ab">
       <div class="lt-paper">
         <div class="tape t1"></div><div class="tape t2"></div>
@@ -503,7 +576,7 @@ button,input{font:inherit;color:inherit}
   </section>
 
   <!-- 10 REASONS -->
-  <section class="poster" id="reasons" data-f="p. 10 — 26 reasons">
+  <section class="poster" id="reasons" data-f="p. 12 — 26 reasons">
     <div class="side l">26 reasons</div><div class="side r">it's not short</div>
     <div class="ab">
       <div class="rs-hd"><div class="big">26<br><span>REASONS</span></div><div class="k">why it's you. a very incomplete list.</div></div>
@@ -512,7 +585,7 @@ button,input{font:inherit;color:inherit}
   </section>
 
   <!-- 11 WISH -->
-  <section class="poster" id="wish" data-f="p. 11 — make a wish">
+  <section class="poster" id="wish" data-f="p. 13 — make a wish">
     <div class="room"></div>
     <div class="ab">
       <div class="w-hd"><div class="big"><div>MAKE A</div><div>WISH</div></div><p>26 candles · tap them, hit blow, or really blow into your mic</p></div>
@@ -525,7 +598,7 @@ button,input{font:inherit;color:inherit}
   </section>
 
   <!-- 12 BACK COVER -->
-  <section class="poster" id="back" data-f="p. 12 — the back cover">
+  <section class="poster" id="back" data-f="p. 14 — the back cover">
     <div class="side l">the end</div><div class="side r">of chapter 26</div>
     <div class="ab">
       <div class="bk-hd" id="bkHd" data-rn="HAPPY|BIRTHDAY|KINJAL"></div>
@@ -613,7 +686,8 @@ function cLoop() {
 }
 
 /* ---------- loader ---------- */
-const imgs = ['forehead-halftone', 'akina-halftone', 'annaidli-halftone', 'night-halftone', 'balsa-halftone'].map(k => `img/${k}.webp`)
+const imgs = ['forehead-halftone', 'akina-halftone', 'annaidli-halftone', 'balsa-halftone', 'k-red1', 'k-red2', 'k-garba'].map(k => `img/${k}.webp`)
+  .concat(['k-ember', 'k-amber', 'k-ghostplate', 'k-garbaplate', 'k-duo1', 'k-duo2', 'k-duo3'].map(k => `img/${k}.jpg`))
   .concat(['annaidli', 'balsa', 'garba', 'akina', 'sinonnas', 'night', 'cheek', 'forehead'].map(k => `img/${k}.jpg`));
 let loaded = 0; const msgs = ['gluing photos…', 'cutting paper…', 'inking the stamps…', 'drying the ink…', 'stapling it together…'];
 const shown = {v: 0};
@@ -686,7 +760,8 @@ $('#gForm').addEventListener('submit', e => {
 
 /* ---------- helpers ---------- */
 function prepDraw(sel) { $$(sel).forEach(p => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; }); }
-const pin = (id, len, extra = {}) => gsap.timeline({scrollTrigger: Object.assign({trigger: id, start: 'top top', end: `+=${len}%`, scrub: 1, pin: true, invalidateOnRefresh: true}, extra)});
+const order = $$('.poster').map(p => '#' + p.id);
+const pin = (id, len, extra = {}) => gsap.timeline({scrollTrigger: Object.assign({trigger: id, start: 'top top', end: `+=${len}%`, scrub: 1, pin: true, invalidateOnRefresh: true, refreshPriority: 100 - order.indexOf(id)}, extra)});
 function sizeCuts() { $$('#cCut, #bkCut').forEach(i => i.style.setProperty('--w', i.offsetWidth + 'px')); }
 $$('#cCut, #bkCut').forEach(i => i.complete ? sizeCuts() : i.addEventListener('load', sizeCuts)); addEventListener('resize', sizeCuts);
 const slam = {opacity: 0, scale: 2.6, rotation: -20};
@@ -741,6 +816,7 @@ gsap.to('#anStamp svg', {rotation: 360, duration: 20, repeat: -1, ease: 'none', 
 /* 4 AGE */
 const age = {v: 0};
 pin('#age', 200)
+  .fromTo('#agPlate', {scale: 1.18}, {scale: 1, duration: 2.6, ease: 'none'}, 0)
   .fromTo('.ag-num.o', {scale: .5, opacity: 0}, {scale: 1, opacity: 1, duration: .5}, 0)
   .to(age, {v: 26, duration: 1.6, ease: 'power2.out', onUpdate: () => $('#agNum').textContent = Math.round(age.v)}, 0)
   .fromTo('#agNum', {clipPath: 'inset(100% 0 0 0)'}, {clipPath: 'inset(0% 0 0 0)', duration: 1.6, ease: 'power2.out'}, 0)
@@ -766,12 +842,34 @@ csTl.fromTo('#csZoom', {opacity: 0, clipPath: 'inset(40% 30% 40% 30%)'}, {opacit
 const tour = [['Anna Idli', 'opening night', true], ['Lonavala', 'the road trip', false], ['Cozy Box', 'intimate show', true], ['Akina', 'dinner set', false], ["Si Nonna's", 'live cooking', true], ['Balsa', 'encore', false], ['Garba Night', 'dance floor', true], ['every café', 'residency', false]];
 $('#tList').innerHTML = tour.map(([v, d, s]) => `<div class="t-row"><b>${v}</b><span>${d}</span>${s ? '<i class="sold">SOLD OUT</i>' : ''}</div>`).join('');
 const tTl = pin('#tour', 300);
+tTl.fromTo('#tPlate', {scale: 1.2, xPercent: -4}, {scale: 1, xPercent: 0, duration: 3.6, ease: 'none'}, 0);
 tTl.fromTo('.t-hd > *', {y: -40, opacity: 0}, {y: 0, opacity: 1, duration: .4, stagger: .12}, 0)
    .fromTo('.t-row', {xPercent: -110}, {xPercent: 0, duration: .45, stagger: .2, ease: 'power3.out'}, .4);
 $$('.t-row .sold').forEach((s, i) => tTl.to(s, {opacity: .9, scale: 1, duration: .2, ease: 'power4.in'}, 2.4 + i*.22));
-tTl.fromTo('#tCut', {xPercent: -80, opacity: 0}, {xPercent: 0, opacity: 1, duration: .7}, 2)
+tTl.fromTo('#tCut', {xPercent: 60, opacity: 0}, {xPercent: 0, opacity: 1, duration: .8, ease: 'power3.out'}, 1.2)
    .fromTo('#tFoot', {opacity: 0, rotation: 10}, {opacity: 1, rotation: -4, duration: .4}, 3.4)
    .to({}, {duration: .4});
+
+
+/* COVER STAR */
+function sizeMore() { $$('#muCut, #gbCut').forEach(i => i.style.setProperty('--w', i.offsetWidth + 'px')); }
+$$('#muCut, #gbCut').forEach(i => i.complete ? sizeMore() : i.addEventListener('load', sizeMore)); addEventListener('resize', sizeMore);
+pin('#muse', 240)
+  .fromTo('#muTitle .a', {yPercent: -120, opacity: 0}, {yPercent: 0, opacity: 1, duration: .5, ease: 'power4.out'}, 0)
+  .fromTo(['#muP1', '#muP2', '#muP3'], {yPercent: -130, opacity: 0}, {yPercent: 0, opacity: 1, duration: .6, stagger: .18, ease: 'power3.out'}, .2)
+  .fromTo('#muCut', {yPercent: 50, opacity: 0, scale: .9}, {yPercent: 0, opacity: 1, scale: 1, duration: .8, ease: 'power3.out'}, .9)
+  .fromTo('#muTitle .b', {clipPath: 'inset(0 100% 0 0)'}, {clipPath: 'inset(0 0% 0 0)', duration: .6, ease: 'none'}, 1.4)
+  .fromTo('#muse .mu-lab', {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: .3, stagger: .2, ease: 'back.out(3)', onStart: () => buzz(15)}, 1.9)
+  .to({}, {duration: .5});
+
+/* GARBA ISSUE */
+pin('#garba', 260)
+  .fromTo('#gbPlate', {scale: 1.25, xPercent: 6}, {scale: 1, xPercent: 0, duration: 3, ease: 'none'}, 0)
+  .fromTo('#gbMast', {letterSpacing: '.6em', opacity: 0}, {letterSpacing: '.02em', opacity: 1, duration: .8, ease: 'power3.out'}, 0)
+  .fromTo('#gbCut', {yPercent: 30, opacity: 0, rotation: -4}, {yPercent: 0, opacity: 1, rotation: 0, duration: .9, ease: 'power3.out'}, .4)
+  .fromTo('#gbStrip', {xPercent: -120}, {xPercent: 0, duration: .5, ease: 'power4.out', onComplete: () => buzz(25)}, 1.4)
+  .fromTo(['#gbL1', '#gbL2'], {opacity: 0, y: 24}, {opacity: 1, y: 0, duration: .4, stagger: .25}, 2)
+  .to({}, {duration: .5});
 
 /* 7 NEWSPAPER */
 prepDraw('#npRing path');
@@ -790,9 +888,10 @@ const art = {
   sloth: '<svg viewBox="0 0 120 120"><ellipse cx="60" cy="68" rx="34" ry="36" fill="#a07c5b"/><ellipse cx="60" cy="60" rx="25" ry="21" fill="#e8d3b5"/><ellipse cx="48" cy="58" rx="8" ry="6" fill="#5b3f2a" transform="rotate(-20 48 58)"/><ellipse cx="72" cy="58" rx="8" ry="6" fill="#5b3f2a" transform="rotate(20 72 58)"/><path d="M45 58 Q48 61 51 58" stroke="#fff" stroke-width="2" fill="none"/><path d="M69 58 Q72 61 75 58" stroke="#fff" stroke-width="2" fill="none"/><ellipse cx="60" cy="66" rx="4" ry="3" fill="#1a1012"/><path d="M55 72 Q60 76 65 72" stroke="#1a1012" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M96 14 L86 34 L94 34 L84 54" stroke="#e9b52c" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>',
   max: '<svg viewBox="0 0 120 120"><g transform="rotate(-18 60 60)"><rect x="14" y="44" width="92" height="32" rx="6" fill="#1a0f12"/><rect x="14" y="44" width="14" height="32" rx="4" fill="#c8191f"/><rect x="92" y="44" width="14" height="32" rx="4" fill="#c8191f"/><text x="60" y="66" text-anchor="middle" font-family="Anton,sans-serif" font-size="16" fill="#e9b52c">MAX</text></g><g transform="rotate(12 60 80)"><rect x="22" y="78" width="78" height="22" rx="5" fill="#4a1426"/><text x="61" y="94" text-anchor="middle" font-family="Manrope,sans-serif" font-weight="800" font-size="11" fill="#fff">PROTEIN</text></g></svg>'
 };
-const items = [['avo', 'the avocado', 'priceless', [4, 30], -8], ['hp', 'the wizard', '1 of 1', [54, 28], 7], ['sloth', 'the sloth', 'sold out', [6, 56], 5], ['max', 'max protein', 'limited', [54, 54], -6]];
+const items = [['avo', 'the avocado', 'priceless', [3, 36], -8], ['hp', 'the wizard', '1 of 1', [64, 32], 7], ['sloth', 'the sloth', 'sold out', [4, 55], 5], ['max', 'max protein', 'limited', [64, 51], -6]];
 $('#stickers').innerHTML = items.map(([a, n, p, [l, t], r]) => `<div class="sticker" style="left:${l}cqw;top:${t}cqh"><div class="s">${art[a]}</div><div class="tag">${n}<b>${p}</b></div></div>`).join('');
 const coTl = pin('#coll', 260);
+coTl.fromTo('#coPlate', {scale: 1.15}, {scale: 1, duration: 3, ease: 'none'}, 0);
 coTl.fromTo('.co-hd > *', {y: -40, opacity: 0}, {y: 0, opacity: 1, duration: .4, stagger: .12}, 0);
 $$('.sticker').forEach((s, i) => coTl.fromTo(s, {y: '80cqh', rotation: (i % 2 ? 1 : -1)*90, scale: .4}, {y: 0, rotation: items[i][4], scale: 1, duration: .6, ease: 'back.out(1.6)'}, .4 + i*.3)
   .fromTo(s.querySelector('.tag'), {scale: 0}, {scale: 1, duration: .25, ease: 'back.out(3)'}, .8 + i*.3));
@@ -964,8 +1063,11 @@ $('#replay').onclick = () => lenis.scrollTo(0, {duration: 4});
 $('#confBtn').onclick = () => { confetti(240); buzz(30); };
 
 /* folio label */
-$$('[data-f]').forEach(sec => ScrollTrigger.create({trigger: sec, start: 'top 50%', end: 'bottom 50%', onToggle: s => s.isActive && ($('#folioL').textContent = sec.dataset.f)}));
-addEventListener('load', () => { sizeCuts(); ScrollTrigger.refresh(); });
+const fsecs = $$('[data-f]'); let lastF = '';
+function folio() { const mid = innerHeight/2; for (const sec of fsecs) { const r = sec.getBoundingClientRect(); if (r.top <= mid && r.bottom >= mid) { if (lastF !== sec.dataset.f) { lastF = sec.dataset.f; $('#folioL').textContent = lastF; } break; } } }
+lenis.on('scroll', folio); addEventListener('scroll', folio, {passive: true});
+ScrollTrigger.sort();
+addEventListener('load', () => { sizeCuts(); sizeMore(); ScrollTrigger.sort(); ScrollTrigger.refresh(); });
 })();
 </script>
 </body>
