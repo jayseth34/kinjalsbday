@@ -7,10 +7,34 @@
 <meta name="description" content="Issue 26. The Birthday Issue. A zine for Kinjal, by Jay.">
 <meta name="theme-color" content="#efe6d2">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Abril+Fatface&family=Instrument+Serif:ital@0;1&family=Permanent+Marker&family=Caveat:wght@600;700&family=Space+Mono:wght@400;700&family=Rubik+Mono+One&family=Manrope:wght@500;800&display=swap" rel="stylesheet">
+<!-- link preview (WhatsApp / iMessage / Instagram) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Birthday Issue">
+<meta property="og:title" content="KINJAL — The Birthday Issue · Nº 26">
+<meta property="og:description" content="A limited edition zine, 1 of 1. On newsstands 4 November.">
+<meta property="og:url" content="https://jayseth34.github.io/kinjalsbday/">
+<meta property="og:image" content="https://jayseth34.github.io/kinjalsbday/og.jpg">
+<meta property="og:image:secure_url" content="https://jayseth34.github.io/kinjalsbday/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Birthday Issue cover — KINJAL, Nº 26">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jayseth34.github.io/kinjalsbday/og.jpg">
+<link rel="preload" href="fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+@font-face{font-family:"Anton";src:url(fonts/anton-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Abril Fatface";src:url(fonts/abril-fatface-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-latin-400-normal.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url(fonts/instrument-serif-latin-400-italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Permanent Marker";src:url(fonts/permanent-marker-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Caveat";src:url(fonts/caveat-latin-600-normal.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Caveat";src:url(fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Space Mono";src:url(fonts/space-mono-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Space Mono";src:url(fonts/space-mono-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Rubik Mono One";src:url(fonts/rubik-mono-one-latin-400-normal.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Manrope";src:url(fonts/manrope-latin-500-normal.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Manrope";src:url(fonts/manrope-latin-800-normal.woff2) format("woff2");font-weight:800;font-display:swap}
 :root{--paper:#efe6d2;--ink:#151112;--red:#c8191f;--cream:#f2e2b6;--mustard:#e9b52c;--cobalt:#2747c9;--pink:#f4a6b8;--green:#1f4d36;--kraft:#c9a77a;--marker:#2f5be0;--news:#e6e0d1}
 *{box-sizing:border-box;margin:0;padding:0}
 html.lenis,html.lenis body{height:auto}
@@ -77,7 +101,7 @@ button,input{font:inherit;color:inherit}
 /* cursor */
 .cur{position:fixed;left:0;top:0;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--red);z-index:200;pointer-events:none;display:none;mix-blend-mode:multiply;transition:width .2s,height .2s,margin .2s}
 .cur.big{width:46px;height:46px;margin:-23px 0 0 -23px;background:rgba(200,25,31,.35)}
-@media (hover:hover) and (pointer:fine){.cur{display:block}body,button,input,.sticker,.candle{cursor:none!important}}
+@media (hover:hover) and (pointer:fine){.cur{display:block}body,button,input,.sticker,.hit{cursor:none!important}}
 
 /* ===== LOADER ===== */
 #loader{position:fixed;inset:0;z-index:150;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:transform 1s cubic-bezier(.7,0,.2,1)}
@@ -85,6 +109,29 @@ button,input{font:inherit;color:inherit}
 #loader::after{content:"";position:absolute;left:0;right:0;bottom:-24px;height:26px;background:var(--paper);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='26'%3E%3Cpath d='M0 0 V14 L6 20 L11 12 L18 23 L24 15 L31 21 L37 11 L44 22 L50 14 L57 24 L63 13 L70 20 L77 12 L83 23 L90 16 L96 22 L103 13 L110 21 L116 14 L120 19 V0Z'/%3E%3C/svg%3E") 0 0/120px 26px repeat-x;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='26'%3E%3Cpath d='M0 0 V14 L6 20 L11 12 L18 23 L24 15 L31 21 L37 11 L44 22 L50 14 L57 24 L63 13 L70 20 L77 12 L83 23 L90 16 L96 22 L103 13 L110 21 L116 14 L120 19 V0Z'/%3E%3C/svg%3E") 0 0/120px 26px repeat-x}
 #loader .pct{font-family:"Anton";font-size:clamp(7rem,34vw,16rem);line-height:.8;color:var(--red);font-variant-numeric:tabular-nums}
 #loader .msg{font:700 .7rem "Space Mono";letter-spacing:.3em;text-transform:uppercase}
+
+
+/* ===== COUNTDOWN LOCK ===== */
+#soon{position:fixed;inset:0;z-index:145;background:var(--paper);overflow:hidden;display:none}
+#soon.on{display:block}
+.sn-hd{position:absolute;top:5cqh;left:0;right:0;text-align:center;line-height:1.1}
+.sn-hd .rn{font-size:9.4cqw}
+.sn-k{position:absolute;top:calc(5cqh + 33cqw);left:6cqw;right:6cqw;display:flex;justify-content:space-between;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:1.4cqw 0;font:700 2.4cqw "Space Mono";letter-spacing:.12em;text-transform:uppercase}
+.sn-clock{position:absolute;top:calc(5cqh + 42cqw);left:4cqw;right:4cqw;display:flex;justify-content:center;gap:2cqw}
+.sn-clock div{flex:1;background:var(--ink);color:var(--paper);text-align:center;padding:2.6cqw 0 2cqw;box-shadow:4px 4px 0 var(--red);position:relative}
+.sn-clock b{display:block;font:400 13cqw/1 "Anton";font-variant-numeric:tabular-nums}
+.sn-clock span{font:700 2.2cqw "Space Mono";letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.sn-clock b.tick{animation:tick .35s ease}
+@keyframes tick{0%{transform:translateY(-30%);opacity:.2}100%{transform:none;opacity:1}}
+.sn-cut{position:absolute;left:50%;bottom:0;height:46cqh;margin-left:calc(var(--w,280px)/-2);filter:drop-shadow(0 18px 24px rgba(0,0,0,.35)) blur(0)}
+.sn-bar{position:absolute;left:-6cqw;right:-6cqw;height:9cqw;background:var(--ink);color:var(--paper);display:grid;place-items:center;font:400 6cqw "Anton";letter-spacing:.3em;z-index:3;box-shadow:0 6px 14px rgba(0,0,0,.3)}
+.sn-bar.b1{bottom:30cqh;transform:rotate(-6deg)}
+.sn-bar.b2{bottom:17cqh;transform:rotate(4deg);background:var(--red)}
+.sn-note{position:absolute;left:6cqw;top:calc(5cqh + 72cqw);font-family:"Permanent Marker";font-size:6.2cqw;color:var(--marker);transform:rotate(-4deg);z-index:4;line-height:1.05}
+.sn-jay{position:absolute;right:5cqw;top:calc(5cqh + 70cqw);z-index:6;display:none;text-align:right}
+.sn-jay.on{display:block}
+.sn-jay small{display:block;font:700 2.2cqw "Space Mono";letter-spacing:.12em;text-transform:uppercase;margin-top:1.4cqw;color:var(--red)}
+.sn-out{position:absolute;left:50%;top:40%;width:64cqw;height:64cqw;margin:-32cqw 0 0 -32cqw;border-radius:50%;border:2cqw solid var(--red);color:var(--red);display:grid;place-items:center;font:400 16cqw/0.85 "Anton";text-align:center;transform:rotate(-14deg) scale(3);opacity:0;mix-blend-mode:multiply;z-index:8;pointer-events:none}
 
 /* ===== GATE ===== */
 #gate{position:fixed;inset:0;z-index:140;background:var(--paper);overflow:hidden}
@@ -262,17 +309,15 @@ button,input{font:inherit;color:inherit}
 .w-hd .big{font-family:"Anton";font-weight:400;font-size:24cqw;line-height:.82;text-transform:uppercase}
 .w-hd .big div:nth-child(2){color:transparent;-webkit-text-stroke:.45cqw var(--cream)}
 .w-hd p{font:700 2.6cqw "Space Mono";letter-spacing:.14em;text-transform:uppercase;margin-top:3cqw;padding:0 8cqw;line-height:1.5}
-.cake-wrap{position:absolute;left:50%;top:50cqh;width:70cqw;margin-left:-35cqw}
-.candles{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4cqw 2.2cqw;padding:0 6cqw;margin-bottom:-1cqw;position:relative;z-index:2}
-.candle{width:1.8cqw;height:8cqw;border-radius:2px;background:repeating-linear-gradient(45deg,#fff 0 4px,var(--red) 4px 8px);position:relative;cursor:pointer}
-.candle .fl{position:absolute;bottom:100%;left:50%;width:2.6cqw;height:4.2cqw;margin-left:-1.3cqw;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff 0 20%,#ffd36b 40%,#ff7a3d 80%);box-shadow:0 0 14px 5px rgba(255,190,80,.6);animation:fl .12s infinite alternate;transition:opacity .25s,transform .25s}
-.candle.out .fl{opacity:0;transform:scale(.2) translateY(-6px)}
-@keyframes fl{to{transform:scale(1.08,.92) rotate(4deg)}}
-.cake{height:34cqw;border-radius:3cqw 3cqw 4cqw 4cqw;background:linear-gradient(180deg,#f4a6b8 0 22%,#fff2e6 22% 30%,#c8191f 30% 62%,#fff2e6 62% 70%,#c8191f 70%);position:relative;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
-.cake::before{content:"";position:absolute;top:6.6cqw;left:0;right:0;height:5cqw;background:radial-gradient(circle at 3cqw 0,#f4a6b8 3cqw,transparent 3.1cqw) 0 0/6cqw 5cqw repeat-x}
-.cake b{position:absolute;top:13cqw;left:0;right:0;text-align:center;font-family:"Permanent Marker";font-weight:400;font-size:6.6cqw;color:#fff2e6}
-.w-status{position:absolute;left:0;right:0;top:calc(50cqh + 52cqw);text-align:center;font-family:"Permanent Marker";font-size:6cqw;color:#fff;min-height:7cqw}
-.w-btns{position:absolute;left:0;right:0;bottom:8cqh;display:flex;gap:3cqw;justify-content:center;flex-wrap:wrap}
+.room{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 60% 42% at 50% 60%,rgba(255,170,80,.22),rgba(6,7,20,.93) 70%);transition:opacity 1.4s ease}
+#wish.lights .room{opacity:0}
+#wish .ab{z-index:2}
+.w-stage{position:absolute;left:0;right:0;top:33cqh;bottom:5cqh;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+.cake3{width:min(88cqw,46cqh);touch-action:manipulation}
+.cake3 svg{width:100%;height:auto;display:block;overflow:visible}
+.cake3 .hit{fill:transparent;cursor:pointer}
+.w-status{text-align:center;font-family:"Permanent Marker";font-size:5.6cqw;color:#fff;min-height:7cqw;text-shadow:0 2px 10px rgba(0,0,0,.4);padding:0 6cqw}
+.w-btns{display:flex;gap:3cqw;justify-content:center;flex-wrap:wrap}
 .pb{border:2px solid var(--ink);background:var(--cream);color:var(--ink);font:400 5cqw "Anton";letter-spacing:.06em;text-transform:uppercase;padding:2.4cqw 5cqw;cursor:pointer;box-shadow:4px 4px 0 var(--ink);transition:transform .1s,box-shadow .1s}
 .pb:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
 .pb.red{background:var(--red);color:#fff}
@@ -298,6 +343,21 @@ button,input{font:inherit;color:inherit}
 
 <!-- LOADER -->
 <div id="loader"><div class="msg">printing the birthday issue</div><div class="pct" id="pct">0</div><div class="msg" id="pmsg">gluing photos…</div></div>
+
+
+<!-- COUNTDOWN LOCK (before 4 Nov 2026, 00:00 IST) -->
+<div id="soon">
+  <div class="ab">
+    <div class="sn-hd" data-rn="ON|NEWSSTANDS|IN"></div>
+    <div class="sn-k"><span>issue nº 26</span><span>the birthday issue</span><span>04 · 11 · 2026</span></div>
+    <div class="sn-clock"><div><b id="snD">00</b><span>days</span></div><div><b id="snH">00</b><span>hrs</span></div><div><b id="snM">00</b><span>min</span></div><div><b id="snS">00</b><span>sec</span></div></div>
+    <div class="sn-note">no peeking,<br>Bittu ♥</div>
+    <div class="sn-jay" id="snJay"><button class="pb red" id="snPreview">preview now ▶</button><small>only visible on your link</small></div>
+    <img class="sn-cut" id="snCut" src="img/forehead-halftone.webp" alt="">
+    <div class="sn-bar b1">CLASSIFIED</div><div class="sn-bar b2">TOP SECRET</div>
+  </div>
+  <div class="sn-out" id="snOut">OUT<br>NOW!</div>
+</div>
 
 <!-- GATE -->
 <div id="gate">
@@ -453,11 +513,14 @@ button,input{font:inherit;color:inherit}
 
   <!-- 11 WISH -->
   <section class="poster" id="wish" data-f="p. 11 — make a wish">
+    <div class="room"></div>
     <div class="ab">
-      <div class="w-hd"><div class="big"><div>MAKE A</div><div>WISH</div></div><p>26 candles · tap them, hit blow, or blow into your mic</p></div>
-      <div class="cake-wrap"><div class="candles" id="candles"></div><div class="cake"><b>Kinjal · 26</b></div></div>
-      <div class="w-status" id="wStatus"></div>
-      <div class="w-btns"><button class="pb red" id="blowBtn">blow</button><button class="pb" id="micBtn">use mic</button><button class="pb" id="relight" style="display:none">again</button></div>
+      <div class="w-hd"><div class="big"><div>MAKE A</div><div>WISH</div></div><p>26 candles · tap them, hit blow, or really blow into your mic</p></div>
+      <div class="w-stage">
+        <div class="cake3" id="cake3"></div>
+        <div class="w-status" id="wStatus">the lights are off. close your eyes…</div>
+        <div class="w-btns"><button class="pb red" id="blowBtn">blow 💨</button><button class="pb" id="micBtn">use mic 🎤</button><button class="pb" id="relight" style="display:none">light again</button></div>
+      </div>
     </div>
   </section>
 
@@ -509,7 +572,7 @@ lenis.stop();
 /* ---------- cursor ---------- */
 const cur = $('#cur');
 addEventListener('pointermove', e => { gsap.to(cur, {x: e.clientX, y: e.clientY, duration: .15, ease: 'power2.out'}); });
-document.addEventListener('pointerover', e => cur.classList.toggle('big', !!e.target.closest('button, input, .sticker, .candle')));
+document.addEventListener('pointerover', e => cur.classList.toggle('big', !!e.target.closest('button, input, .sticker, .hit')));
 
 /* ---------- audio: Happy Birthday on a warm music-box ---------- */
 let actx, master, muted = false, loopT;
@@ -559,8 +622,37 @@ const loads = imgs.map(src => new Promise(r => { const i = new Image(); i.onload
 const fontsReady = (document.fonts ? document.fonts.ready : Promise.resolve()).then(bump);
 Promise.race([Promise.all([...loads, fontsReady]), new Promise(r => setTimeout(r, 6000))]).then(() => {
   gsap.to(shown, {v: 100, duration: .4, onUpdate: () => $('#pct').textContent = Math.round(shown.v), onComplete: () => {
-    setTimeout(() => { $('#loader').classList.add('done'); gateIn(); }, 350); }});
+    setTimeout(() => { $('#loader').classList.add('done'); afterLoad(); }, 350); }});
 });
+
+
+/* ---------- countdown lock: opens for everyone at 00:00 IST, 4 Nov 2026 ---------- */
+const LAUNCH = Date.parse('2026-11-04T00:00:00+05:30');
+const qs = new URLSearchParams(location.search), isJay = qs.has('jay');
+let snTimer;
+function afterLoad() {
+  if (Date.now() >= LAUNCH) return gateIn();
+  $('#soon').classList.add('on');
+  const cut = $('#snCut'); const sz = () => cut.style.setProperty('--w', cut.offsetWidth + 'px'); cut.complete ? sz() : cut.addEventListener('load', sz);
+  if (isJay) $('#snJay').classList.add('on');
+  gsap.from('#soon .sn-hd .rn', {y: -80, rotation: () => gsap.utils.random(-40, 40), opacity: 0, duration: .6, stagger: .04, ease: 'back.out(2)', delay: .3});
+  gsap.from('.sn-clock div', {y: 40, opacity: 0, duration: .5, stagger: .1, delay: .9});
+  gsap.from('.sn-bar', {xPercent: (i) => i ? 120 : -120, duration: .7, stagger: .15, delay: 1.2, ease: 'power3.out'});
+  const prev = {};
+  const tick = () => {
+    const ms = LAUNCH - Date.now();
+    if (ms <= 0) { clearInterval(snTimer); return release(true); }
+    const t = ms/1000|0, v = {snD: t/86400|0, snH: (t%86400)/3600|0, snM: (t%3600)/60|0, snS: t%60};
+    for (const k in v) { const txt = String(v[k]).padStart(2, '0'); if (prev[k] !== txt) { const el = $('#' + k); el.textContent = txt; el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); prev[k] = txt; } }
+  };
+  tick(); snTimer = setInterval(tick, 1000);
+}
+function release(live) {
+  clearInterval(snTimer);
+  gsap.to('#snOut', {opacity: 1, scale: 1, duration: .35, ease: 'power4.in', onComplete: () => { buzz([40, 60, 120]); confetti(live ? 260 : 120); }});
+  gsap.to('#soon', {yPercent: -105, duration: 1, delay: 1.4, ease: 'power3.inOut', onComplete: () => { $('#soon').classList.remove('on'); gateIn(); }});
+}
+$('#snPreview').onclick = () => release(false);
 
 /* ---------- gate ---------- */
 function gateIn() {
@@ -721,27 +813,143 @@ const ri = $$('.rs-i');
 pin('#reasons', 260, {onUpdate: s => { const n = Math.round(Math.min(1, s.progress/.92)*ri.length); ri.forEach((r, i) => r.classList.toggle('on', i < n)); }})
   .fromTo('.rs-hd .big', {scale: 1.6, opacity: 0}, {scale: 1, opacity: 1, duration: .1}, 0).to({}, {duration: .9});
 
-/* 11 WISH */
-const cs = $('#candles'), st = $('#wStatus');
-for (let i = 0; i < 26; i++) { const c = document.createElement('div'); c.className = 'candle'; c.innerHTML = '<div class="fl"></div>'; c.style.height = (6.5 + Math.random()*3) + 'cqw'; c.onclick = () => { c.classList.add('out'); buzz(10); check(); }; cs.appendChild(c); }
-function check() {
-  const lit = $$('.candle:not(.out)').length;
-  st.textContent = lit ? `${26 - lit} down, ${lit} to go…` : '';
-  if (!lit) { st.textContent = 'wish granted ✨'; confetti(220); setTimeout(() => confetti(160, vw()*.2), 400); setTimeout(() => confetti(160, vw()*.8), 700); buzz([50, 50, 50, 50, 200]); $('#relight').style.display = ''; stopMic(); }
+/* 11 WISH — a real cake */
+const NS = 'http://www.w3.org/2000/svg', st = $('#wStatus'), wishSec = $('#wish');
+const CX = 200, TOP = 168, RX = 150, RY = 38, BOT = 322;
+const rng = (() => { let x = 26; return () => (x = (x*16807) % 2147483647)/2147483647; })();
+const edgeY = x => TOP + RY*Math.sqrt(Math.max(0, 1 - ((x - CX)/RX)**2));
+let svgS = `<svg viewBox="0 0 400 400" id="cakeSvg"><defs>
+<linearGradient id="gSide" x1="0" x2="1"><stop offset="0" stop-color="#b8707f"/><stop offset=".16" stop-color="#eaa9b7"/><stop offset=".42" stop-color="#ffdbe3"/><stop offset=".68" stop-color="#f3b5c2"/><stop offset="1" stop-color="#a8606f"/></linearGradient>
+<linearGradient id="gSideV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity=".08"/><stop offset="1" stop-color="#000" stop-opacity=".25"/></linearGradient>
+<radialGradient id="gTop" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#ffe9ee"/><stop offset="1" stop-color="#f2b9c5"/></radialGradient>
+<radialGradient id="gGan" cx=".42" cy=".35" r=".8"><stop offset="0" stop-color="#6a3522"/><stop offset=".6" stop-color="#3d1c10"/><stop offset="1" stop-color="#26100a"/></radialGradient>
+<linearGradient id="gDrip" x1="0" x2="1"><stop offset="0" stop-color="#26100a"/><stop offset=".4" stop-color="#5a2d1c"/><stop offset=".6" stop-color="#4a2416"/><stop offset="1" stop-color="#1e0c07"/></linearGradient>
+<radialGradient id="gPlate" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#e3e3ea"/><stop offset="1" stop-color="#b8b8c4"/></radialGradient>
+<radialGradient id="gRos" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#fffaf2"/><stop offset=".7" stop-color="#f6e3cf"/><stop offset="1" stop-color="#d9bfa3"/></radialGradient>
+<radialGradient id="gFlame" cx=".5" cy=".78" r=".62"><stop offset="0" stop-color="#ffffff"/><stop offset=".22" stop-color="#fff7c6"/><stop offset=".48" stop-color="#ffcb4d"/><stop offset=".78" stop-color="#ff7a1a"/><stop offset="1" stop-color="#ff4a00" stop-opacity="0"/></radialGradient>
+<radialGradient id="gGlow"><stop offset="0" stop-color="#ffbe5c" stop-opacity=".75"/><stop offset=".45" stop-color="#ff9a3c" stop-opacity=".22"/><stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/></radialGradient>
+<radialGradient id="gWarm" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#ffcf8a" stop-opacity=".55"/><stop offset="1" stop-color="#ff9a3c" stop-opacity="0"/></radialGradient>
+<linearGradient id="gWax" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".28"/></linearGradient>
+<pattern id="pStripe" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><rect width="7" height="7" fill="#fff7f2"/><rect width="3.2" height="7" fill="#ff6f91"/></pattern>
+<pattern id="pStripe2" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><rect width="7" height="7" fill="#fff7f2"/><rect width="3.2" height="7" fill="#e9b52c"/></pattern>
+<filter id="fBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+<filter id="fSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.4"/></filter>
+</defs>`;
+// plate + shadow
+svgS += `<ellipse cx="200" cy="350" rx="190" ry="30" fill="#000" opacity=".35" filter="url(#fBlur)"/>
+<ellipse cx="200" cy="334" rx="186" ry="42" fill="url(#gPlate)"/><ellipse cx="200" cy="330" rx="170" ry="34" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2"/>`;
+// side
+svgS += `<path d="M50 ${TOP} V${BOT} A${RX} ${RY} 0 0 0 350 ${BOT} V${TOP} Z" fill="url(#gSide)"/><path d="M50 ${TOP} V${BOT} A${RX} ${RY} 0 0 0 350 ${BOT} V${TOP} Z" fill="url(#gSideV)"/>`;
+for (let k = 0; k < 5; k++) { const y = TOP + 40 + k*22; svgS += `<path d="M54 ${y} A${RX - 4} ${RY} 0 0 0 346 ${y}" fill="none" stroke="#fff" stroke-opacity="${.07 + (k % 2)*.05}" stroke-width="2"/>`; }
+// piped bottom border
+for (let x = 56; x <= 344; x += 11) { const y = BOT + RY*Math.sqrt(Math.max(0, 1 - ((x - CX)/RX)**2)) - 3; svgS += `<circle cx="${x}" cy="${y}" r="7" fill="url(#gRos)"/><path d="M${x - 4} ${y - 1} q4 -5 8 0" stroke="#d1b292" stroke-width="1.2" fill="none"/>`; }
+// writing on the cake
+svgS += `<text x="200" y="${BOT - 36}" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="54" fill="#fffdf8" stroke="#c85a75" stroke-width=".8" style="paint-order:stroke" transform="rotate(-3 200 ${BOT - 40})">Kinjal</text>
+<text x="200" y="${BOT - 6}" text-anchor="middle" font-family="Caveat" font-weight="700" font-size="22" fill="#fffdf8" opacity=".9">happy 26th, my Bittu ♥</text>`;
+// top + ganache + drips
+svgS += `<ellipse cx="${CX}" cy="${TOP}" rx="${RX}" ry="${RY}" fill="url(#gTop)"/>`;
+const drips = Array.from({length: 13}, (_, i) => ({c: 62 + i*22.5 + (rng() - .5)*10, w: 6 + rng()*6, l: 12 + rng()*36}));
+let dp = '', back = [];
+for (let x = 52; x <= 348; x += 3) {
+  let d = 6; drips.forEach(q => { d += q.l*Math.exp(-((x - q.c)**2)/(2*q.w*q.w)); });
+  dp += (dp ? ' L' : 'M') + `${x} ${(edgeY(x) + d).toFixed(1)}`; back.push(`${x} ${(edgeY(x) - 2).toFixed(1)}`);
 }
-function blow(k) { $$('.candle:not(.out)').sort(() => Math.random() - .5).slice(0, k).forEach((c, i) => setTimeout(() => { c.classList.add('out'); check(); }, i*45)); }
-$('#blowBtn').onclick = () => blow(26);
-$('#relight').onclick = () => { $$('.candle').forEach(c => c.classList.remove('out')); st.textContent = 'another wish? go on.'; $('#relight').style.display = 'none'; };
+svgS += `<path d="${dp} L${back.reverse().join(' L')} Z" fill="url(#gDrip)"/>`;
+drips.forEach(q => { if (q.l > 22) { const y = edgeY(q.c) + 6 + q.l*.72; svgS += `<ellipse cx="${(q.c - q.w*.25).toFixed(1)}" cy="${y.toFixed(1)}" rx="1.6" ry="${(q.l*.18).toFixed(1)}" fill="#fff" opacity=".28"/>`; } });
+svgS += `<ellipse cx="${CX}" cy="${TOP - 1}" rx="${RX - 6}" ry="${RY - 4}" fill="url(#gGan)"/>
+<path d="M90 ${TOP - 14} Q200 ${TOP - 40} 300 ${TOP - 16}" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="5" stroke-linecap="round" filter="url(#fSoft)"/>`;
+for (let i = 0; i < 46; i++) { const a = rng()*6.283, r = Math.sqrt(rng())*.9; const x = CX + Math.cos(a)*(RX - 16)*r, y = TOP - 1 + Math.sin(a)*(RY - 8)*r;
+  svgS += `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="3.4" height="1.4" rx=".7" fill="${['#e9b52c', '#fff', '#ff8fab'][i % 3]}" transform="rotate(${(rng()*180)|0} ${x.toFixed(1)} ${y.toFixed(1)})" opacity=".9"/>`; }
+// rosettes + candles sorted back→front
+const parts = [];
+for (let i = 0; i < 18; i++) { const a = i/18*6.283; parts.push({k: 'r', x: CX + Math.cos(a)*(RX - 12), y: TOP - 2 + Math.sin(a)*(RY - 5)}); }
+const ring = (n, rx, ry, off) => Array.from({length: n}, (_, i) => { const a = off + i/n*6.283; return {k: 'c', x: CX + Math.cos(a)*rx, y: TOP - 2 + Math.sin(a)*ry}; });
+parts.push(...ring(14, 108, 25, .1), ...ring(9, 62, 14, .4), {k: 'c', x: 182, y: TOP - 3}, {k: 'c', x: 200, y: TOP + 1}, {k: 'c', x: 218, y: TOP - 3});
+parts.sort((p, q) => p.y - q.y);
+let ci = 0;
+parts.forEach(p => {
+  const depth = (p.y - (TOP - 40))/80, sc = .82 + depth*.3;
+  if (p.k === 'r') {
+    const r = 12*sc; svgS += `<g transform="translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})"><ellipse cx="0" cy="${r*.3}" rx="${r*1.05}" ry="${r*.5}" fill="#000" opacity=".2"/><circle r="${r}" fill="url(#gRos)"/>
+      <path d="M${-r*.6} 0 A${r*.6} ${r*.6} 0 1 1 ${r*.3} ${r*.45} M${-r*.25} ${-r*.1} A${r*.28} ${r*.28} 0 1 1 ${r*.12} ${r*.2}" fill="none" stroke="#cfae8c" stroke-width="1.3" stroke-linecap="round"/></g>`;
+  } else {
+    const h = (50 + rng()*10)*sc, w = 7.2*sc, pat = ci % 5 === 2 ? 'pStripe2' : 'pStripe';
+    svgS += `<g class="cnd" data-i="${ci}" transform="translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})">
+      <ellipse cx="0" cy="1" rx="${w*.9}" ry="${w*.35}" fill="#000" opacity=".35"/>
+      <rect x="${-w/2}" y="${-h}" width="${w}" height="${h}" rx="1.4" fill="url(#${pat})"/><rect x="${-w/2}" y="${-h}" width="${w}" height="${h}" rx="1.4" fill="url(#gWax)"/>
+      <ellipse cx="0" cy="${-h}" rx="${w/2}" ry="${w*.22}" fill="#fff8f4"/><path d="M${w*.15} ${-h + 1} q1.6 4 .2 ${6 + rng()*5}" stroke="#fff8f4" stroke-width="${1.6*sc}" stroke-linecap="round" fill="none"/>
+      <path d="M0 ${-h} q-.6 -3 .4 -${6*sc}" stroke="#2a1a14" stroke-width="${1.3*sc}" fill="none" stroke-linecap="round"/>
+      <g class="fl" transform="translate(0 ${-h - 5*sc})"><circle class="glow" r="${26*sc}" fill="url(#gGlow)"/><g class="fs"><path d="M0 2 C ${7*sc} ${-5*sc}, ${5.5*sc} ${-17*sc}, 0 ${-30*sc} C ${-5.5*sc} ${-17*sc}, ${-7*sc} ${-5*sc}, 0 2 Z" fill="url(#gFlame)"/><ellipse cx="0" cy="${-2*sc}" rx="${2.4*sc}" ry="${3.6*sc}" fill="#6aa0ff" opacity=".55"/></g></g>
+      <g class="smk" transform="translate(0 ${-h - 6*sc})"></g>
+      <rect class="hit" x="${-14*sc}" y="${-h - 40*sc}" width="${28*sc}" height="${h + 44*sc}"/></g>`;
+    ci++;
+  }
+});
+svgS += `<ellipse id="warm" cx="${CX}" cy="${TOP + 40}" rx="${RX + 30}" ry="${RY + 70}" fill="url(#gWarm)" style="mix-blend-mode:screen;pointer-events:none"/></svg>`;
+$('#cake3').innerHTML = svgS;
+const candles = $$('#cakeSvg .cnd').map((g, i) => ({g, fl: g.querySelector('.fl'), fs: g.querySelector('.fs'), glow: g.querySelector('.glow'), smk: g.querySelector('.smk'), base: g.querySelector('.fl').getAttribute('transform'), lit: true, ph: i*1.7, k: 1}));
+let wind = 0, windT = 0;
+(function flick(t) {
+  t /= 1000; wind += (windT - wind)*.12; windT *= .92;
+  let lit = 0;
+  candles.forEach(c => {
+    if (!c.lit && c.k <= 0) return;
+    if (c.lit) lit++;
+    const n = Math.sin(t*9.3 + c.ph)*.5 + Math.sin(t*14.7 + c.ph*2.1)*.3 + Math.sin(t*3.1 + c.ph)*.2;
+    const sy = (1 + n*.09 - wind*.25)*c.k, sx = (1 - n*.05 + wind*.08)*c.k, lean = n*4 + wind*38;
+    c.fs.setAttribute('transform', `rotate(${lean.toFixed(2)}) scale(${sx.toFixed(3)} ${Math.max(.05, sy).toFixed(3)})`);
+    c.glow.setAttribute('opacity', (c.k*(.75 + n*.18)).toFixed(3));
+  });
+  $('#warm').setAttribute('opacity', (lit/26*(.85 + Math.sin(t*7)*.06)).toFixed(3));
+  requestAnimationFrame(flick);
+})(0);
+function smoke(c) {
+  for (let k = 0; k < 3; k++) {
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', 'M0 0 c 5 -7 -5 -14 0 -22 c 5 -8 -5 -15 0 -23');
+    p.setAttribute('stroke', '#d9d6df'); p.setAttribute('stroke-width', 2.2 - k*.4); p.setAttribute('fill', 'none'); p.setAttribute('stroke-linecap', 'round'); p.setAttribute('opacity', .7);
+    c.smk.appendChild(p);
+    gsap.fromTo(p, {y: 0, scaleX: .4, opacity: .75}, {y: -70 - k*16, x: (Math.random() - .5)*20 + wind*30, scaleX: 1.6 + k*.4, scaleY: 1.3, opacity: 0, duration: 2.2 + k*.5, delay: k*.18, ease: 'power1.out', onComplete: () => p.remove()});
+  }
+}
+function snuff(c) {
+  if (!c.lit) return; c.lit = false;
+  gsap.to(c, {k: 0, duration: .22, ease: 'power2.in'}); smoke(c); check();
+}
+candles.forEach(c => c.g.querySelector('.hit').addEventListener('click', () => { windT = .3; snuff(c); buzz(12); }));
+const litCount = () => candles.filter(c => c.lit).length;
+function check() {
+  const lit = litCount();
+  if (lit && lit < 26) st.textContent = lit <= 3 ? `almost! ${lit} stubborn one${lit > 1 ? 's' : ''} left 😤` : `${26 - lit} down, ${lit} to go…`;
+  if (!lit) {
+    st.textContent = 'wish granted ✨ happy birthday, Bittu!';
+    setTimeout(() => { wishSec.classList.add('lights'); buzz([50, 50, 50, 50, 200]); confetti(220); setTimeout(() => confetti(160, vw()*.2), 400); setTimeout(() => confetti(160, vw()*.8), 700); }, 700);
+    $('#relight').style.display = ''; stopMic();
+  }
+}
+$('#blowBtn').onclick = () => {
+  windT = 1.4; buzz(30);
+  const lit = candles.filter(c => c.lit).sort(() => Math.random() - .5);
+  const keep = litCount() > 6 && Math.random() < .55 ? 1 + (Math.random()*2|0) : 0;   // real cakes always keep one or two
+  lit.slice(0, lit.length - keep).forEach((c, i) => setTimeout(() => snuff(c), 120 + i*28 + Math.random()*80));
+};
+$('#relight').onclick = () => {
+  wishSec.classList.remove('lights'); $('#relight').style.display = 'none'; st.textContent = 'another wish? go on…';
+  candles.forEach((c, i) => setTimeout(() => { c.lit = true; gsap.fromTo(c, {k: 0}, {k: 1, duration: .5, ease: 'back.out(3)'}); if (actx && !muted) note(2200 + i*30, actx.currentTime, .05, 'sine', .02); }, i*70));
+};
 let mic, mr;
 $('#micBtn').onclick = async () => {
   try { mic = await navigator.mediaDevices.getUserMedia({audio: true}); if (!actx) initAudio(); actx.resume();
     const an = actx.createAnalyser(); an.fftSize = 512; actx.createMediaStreamSource(mic).connect(an); const d = new Uint8Array(512);
-    st.textContent = 'blow into your mic…';
-    (function l() { an.getByteTimeDomainData(d); let s = 0; for (const v of d) s += (v - 128)**2; if (Math.sqrt(s/512) > 22) blow(2); mr = requestAnimationFrame(l); })();
-  } catch { st.textContent = 'no mic? just hit blow.'; }
+    st.textContent = 'now blow… for real 🌬️';
+    (function l() { an.getByteTimeDomainData(d); let s = 0; for (const v of d) s += (v - 128)**2; const lvl = Math.sqrt(s/512);
+      windT = Math.max(windT, Math.min(1.6, lvl/26));
+      if (lvl > 20) candles.forEach(c => { if (c.lit && Math.random() < (lvl - 20)/160) snuff(c); });
+      mr = requestAnimationFrame(l); })();
+  } catch { st.textContent = 'no mic? just hit blow 💨'; }
 };
 function stopMic() { cancelAnimationFrame(mr); mic && mic.getTracks().forEach(t => t.stop()); mic = null; }
-pin('#wish', 80).fromTo('.w-hd .big div', {xPercent: (i) => i ? 100 : -100, opacity: 0}, {xPercent: 0, opacity: 1, duration: .3, stagger: .1}, 0).fromTo('.cake-wrap', {yPercent: 60, opacity: 0}, {yPercent: 0, opacity: 1, duration: .4}, .2).to({}, {duration: .3});
+pin('#wish', 80).fromTo('.w-hd .big div', {xPercent: (i) => i ? 100 : -100, opacity: 0}, {xPercent: 0, opacity: 1, duration: .3, stagger: .1}, 0).fromTo('#cake3', {yPercent: 40, opacity: 0}, {yPercent: 0, opacity: 1, duration: .4}, .2).to({}, {duration: .3});
 
 /* 12 BACK COVER */
 let endFired = false;
