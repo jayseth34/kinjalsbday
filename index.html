@@ -112,13 +112,14 @@ button,input{font:inherit;color:inherit}
 
 
 /* ===== COUNTDOWN LOCK ===== */
-#soon{position:fixed;inset:0;z-index:145;background:var(--paper);overflow:hidden;display:none}
+#soon{position:fixed;inset:0;z-index:145;background:#2a0306 url(img/k-museplate.jpg?v=4) center/cover;overflow:hidden;display:none;color:#f6e9d8}
+#soon::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(255,70,50,.18),transparent 60%),linear-gradient(rgba(20,2,4,.25),rgba(20,2,4,.55))}
 #soon.on{display:block}
 .sn-hd{position:absolute;top:5cqh;left:0;right:0;text-align:center;line-height:1.1}
 .sn-hd .rn{font-size:9.4cqw}
-.sn-k{position:absolute;top:calc(5cqh + 33cqw);left:6cqw;right:6cqw;display:flex;justify-content:space-between;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:1.4cqw 0;font:700 2.4cqw "Space Mono";letter-spacing:.12em;text-transform:uppercase}
+.sn-k{position:absolute;top:calc(5cqh + 33cqw);left:6cqw;right:6cqw;display:flex;justify-content:space-between;border-top:2px solid #f6e9d8;border-bottom:2px solid #f6e9d8;color:#f6e9d8;padding:1.4cqw 0;font:700 2.4cqw "Space Mono";letter-spacing:.12em;text-transform:uppercase}
 .sn-clock{position:absolute;top:calc(5cqh + 42cqw);left:4cqw;right:4cqw;display:flex;justify-content:center;gap:2cqw}
-.sn-clock div{flex:1;background:var(--ink);color:var(--paper);text-align:center;padding:2.6cqw 0 2cqw;box-shadow:4px 4px 0 var(--red);position:relative}
+.sn-clock div{flex:1;background:rgba(14,3,4,.85);color:#fff1e8;text-align:center;padding:2.6cqw 0 2cqw;box-shadow:4px 4px 0 #f6e9d8,0 0 30px rgba(255,60,40,.25);position:relative;backdrop-filter:blur(4px)}
 .sn-clock b{display:block;font:400 13cqw/1 "Anton";font-variant-numeric:tabular-nums}
 .sn-clock span{font:700 2.2cqw "Space Mono";letter-spacing:.2em;text-transform:uppercase;opacity:.75}
 .sn-clock b.tick{animation:tick .35s ease}
@@ -126,12 +127,12 @@ button,input{font:inherit;color:inherit}
 .sn-cut{position:absolute;left:50%;bottom:0;height:46cqh;margin-left:calc(var(--w,280px)/-2);filter:drop-shadow(0 18px 24px rgba(0,0,0,.35)) blur(0)}
 .sn-bar{position:absolute;left:-6cqw;right:-6cqw;height:9cqw;background:var(--ink);color:var(--paper);display:grid;place-items:center;font:400 6cqw "Anton";letter-spacing:.3em;z-index:3;box-shadow:0 6px 14px rgba(0,0,0,.3)}
 .sn-bar.b1{bottom:30cqh;transform:rotate(-6deg)}
-.sn-bar.b2{bottom:17cqh;transform:rotate(4deg);background:var(--red)}
-.sn-note{position:absolute;left:6cqw;top:calc(5cqh + 72cqw);font-family:"Permanent Marker";font-size:6.2cqw;color:var(--marker);transform:rotate(-4deg);z-index:4;line-height:1.05}
+.sn-bar.b2{bottom:17cqh;transform:rotate(4deg);background:#f3e9d6;color:#a3121a}
+.sn-note{position:absolute;left:6cqw;top:calc(5cqh + 72cqw);font-family:"Permanent Marker";font-size:6.2cqw;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5);transform:rotate(-4deg);z-index:4;line-height:1.05}
 .sn-jay{position:absolute;right:5cqw;top:calc(5cqh + 70cqw);z-index:6;display:none;text-align:right}
 .sn-jay.on{display:block}
-.sn-jay small{display:block;font:700 2.2cqw "Space Mono";letter-spacing:.12em;text-transform:uppercase;margin-top:1.4cqw;color:var(--red)}
-.sn-out{position:absolute;left:50%;top:40%;width:64cqw;height:64cqw;margin:-32cqw 0 0 -32cqw;border-radius:50%;border:2cqw solid var(--red);color:var(--red);display:grid;place-items:center;font:400 16cqw/0.85 "Anton";text-align:center;transform:rotate(-14deg) scale(3);opacity:0;mix-blend-mode:multiply;z-index:8;pointer-events:none}
+.sn-jay small{display:block;font:700 2.2cqw "Space Mono";letter-spacing:.12em;text-transform:uppercase;margin-top:1.4cqw;color:#ffcdc2}
+.sn-out{position:absolute;left:50%;top:40%;width:64cqw;height:64cqw;margin:-32cqw 0 0 -32cqw;border-radius:50%;border:2cqw solid #fff1e8;color:#fff1e8;display:grid;place-items:center;font:400 16cqw/0.85 "Anton";text-align:center;transform:rotate(-14deg) scale(3);opacity:0;z-index:8;pointer-events:none}
 
 /* ===== GATE ===== */
 #gate{position:fixed;inset:0;z-index:140;background:var(--paper);overflow:hidden}
@@ -213,21 +214,34 @@ button,input{font:inherit;color:inherit}
 .ticket b{display:block;font-family:"Anton";font-weight:400;font-size:8cqw;text-transform:uppercase;line-height:.95}
 .ticket .r b{font-size:11cqw;color:var(--red)}
 
-/* ===== 5 CONTACT SHEET ===== */
-#contact{--bg:#141112;color:#f4efe6}
-.cs-hd{position:absolute;top:5cqh;left:6cqw;right:6cqw;display:flex;justify-content:space-between;align-items:flex-end;font:700 2.6cqw "Space Mono";letter-spacing:.14em;text-transform:uppercase}
-.cs-hd b{font-family:"Anton";font-weight:400;font-size:11cqw;letter-spacing:0;line-height:.85}
-.cs-grid{position:absolute;top:calc(5cqh + 16cqw);left:4cqw;right:4cqw;display:grid;grid-template-columns:1fr 1fr;gap:3.5cqw 3cqw}
-.cs-f{position:relative;background:#000;padding:2.4cqw 0;
-  background-image:radial-gradient(circle,#141112 .9cqw,transparent 1cqw),radial-gradient(circle,#141112 .9cqw,transparent 1cqw);background-size:4cqw 2.4cqw;background-position:0 0,0 100%;background-repeat:repeat-x}
-.cs-f img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:grayscale(.2) contrast(1.05)}
-.cs-f .n{position:absolute;left:1cqw;bottom:-3cqw;font:700 2cqw "Space Mono";color:#ff9a3c}
-.cs-ring{position:absolute;inset:-4cqw -4cqw;width:calc(100% + 8cqw);height:calc(100% + 8cqw);overflow:visible;pointer-events:none;z-index:3}
-.cs-ring path{fill:none;stroke:#ff2a2a;stroke-width:3;stroke-linecap:round}
-.cs-note{position:absolute;font-family:"Permanent Marker";color:#ff2a2a;font-size:5.4cqw;z-index:4;white-space:nowrap;opacity:0;line-height:1}
-.cs-zoom{position:absolute;inset:0;z-index:20;opacity:0;pointer-events:none;background:#141112}
+/* ===== 5 DARKROOM ===== */
+#contact{--bg:#160102;color:#ffd9cf}
+#contact .safe{position:absolute;inset:0;background:radial-gradient(ellipse 80% 40% at 50% -4%,rgba(255,40,24,.75),transparent 70%),radial-gradient(ellipse 90% 70% at 50% 65%,#520609,#120102 78%)}
+#contact .bulb{position:absolute;left:50%;top:-5cqw;width:20cqw;height:20cqw;margin-left:-10cqw;border-radius:50%;background:radial-gradient(circle,#fff3ea 0 10%,#ff5a40 28%,#c3140f 55%,transparent 72%);filter:blur(.5cqw);animation:hum 3.2s ease-in-out infinite;z-index:3}
+@keyframes hum{50%{opacity:.78}}
+.dr-word{position:absolute;left:-2cqw;font-family:"Anton";font-weight:400;font-size:47cqw;line-height:.78;color:transparent;-webkit-text-stroke:.35cqw rgba(255,120,100,.32);letter-spacing:-.01em;z-index:1;white-space:nowrap}
+.dr-word.w1{top:14cqh}.dr-word.w2{top:calc(14cqh + 38cqw);left:24cqw}
+.dr-k{position:absolute;top:6cqh;left:6cqw;right:6cqw;display:flex;justify-content:space-between;align-items:flex-end;z-index:4}
+.dr-k .t{font-family:"Instrument Serif";font-style:italic;font-size:8.6cqw;line-height:.95;color:#ffe9e2;text-shadow:0 0 24px rgba(255,60,40,.5)}
+.dr-k .t b{font-family:"Abril Fatface";font-style:normal;font-weight:400;display:block;font-size:12cqw;letter-spacing:.01em}
+.dr-k .m{font:700 2.1cqw/1.7 "Space Mono";letter-spacing:.2em;text-transform:uppercase;color:#ff9a8a;text-align:right}
+.lines{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:visible}
+.lines path{fill:none;stroke:rgba(255,226,214,.6);stroke-width:1.3}
+.pr{position:absolute;z-index:3;transform:rotate(var(--r));transform-origin:50% 0;animation:sway 5s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes sway{0%,100%{transform:rotate(var(--r))}50%{transform:rotate(calc(var(--r) + 1.6deg))}}
+.cs-f{position:relative;background:#fff6ef;padding:2cqw 2cqw 7.4cqw;box-shadow:0 18px 30px rgba(0,0,0,.6),0 0 40px rgba(255,40,30,.12)}
+.cs-f img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.cs-f .dev{position:absolute;left:2cqw;right:2cqw;top:2cqw;aspect-ratio:1/1;background:#f1e2d8;pointer-events:none}
+.cs-f .pin{position:absolute;top:-4.6cqw;left:50%;width:4.2cqw;height:8.4cqw;margin-left:-2.1cqw;border-radius:1cqw;background:linear-gradient(90deg,#b98f5e,#ead6b6 50%,#a97f4e);box-shadow:0 2px 4px rgba(0,0,0,.45);z-index:3}
+.cs-f .pin::after{content:"";position:absolute;left:50%;top:36%;width:1.1cqw;height:1.1cqw;margin-left:-.55cqw;border-radius:50%;background:#6b4c30}
+.cs-f .n{position:absolute;left:2.4cqw;bottom:1.6cqw;font:700 1.8cqw "Space Mono";color:#b0463c;letter-spacing:.1em}
+.cs-note{position:absolute;right:2.2cqw;bottom:1.2cqw;font-family:"Permanent Marker";color:#c8191f;font-size:4.2cqw;line-height:1;opacity:0;white-space:nowrap}
+.cs-zoom{position:absolute;inset:0;z-index:20;opacity:0;pointer-events:none;background:#140102}
 .cs-zoom img{width:100%;height:100%;object-fit:cover}
-.cs-zoom .cap{position:absolute;left:6cqw;bottom:10cqh;font-family:"Permanent Marker";color:#fff;font-size:10cqw;line-height:.95;text-shadow:0 4px 20px rgba(0,0,0,.6)}
+.cs-zoom .cap{position:absolute;left:6cqw;right:6cqw;bottom:9cqh;color:#fff;text-shadow:0 4px 24px rgba(0,0,0,.7)}
+.cs-zoom .cap small{display:block;font:700 2.4cqw "Space Mono";letter-spacing:.3em;text-transform:uppercase;color:#ffc9b8}
+.cs-zoom .cap b{display:block;font-family:"Abril Fatface";font-weight:400;font-size:15cqw;line-height:.9;margin-top:2cqw}
+.cs-zoom .cap i{font-family:"Instrument Serif";font-size:6.6cqw}
 
 /* ===== 6 TOUR ===== */
 #tour{--bg:#2a0709;color:var(--cream)}
@@ -278,18 +292,30 @@ button,input{font:inherit;color:inherit}
 .tag b{display:block;font-family:"Anton";font-weight:400;font-size:4.4cqw;letter-spacing:.02em;color:var(--red)}
 .co-foot{position:absolute;left:6cqw;right:6cqw;bottom:4cqh;z-index:5;text-shadow:0 2px 14px rgba(0,0,0,.8);font-family:"Instrument Serif";font-style:italic;font-size:6cqw;line-height:1.05;text-align:center}
 
-/* ===== COVER STAR (duotone) ===== */
-#muse{--bg:#151112;color:#fff}
-#muse .weave{position:absolute;inset:0;background:
-  repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 6px),radial-gradient(ellipse at 50% 40%,#2a1a1c,#0c0a0b 75%)}
-.mu-title{position:absolute;top:4cqh;left:5cqw;right:5cqw;z-index:6;line-height:.8}
-.mu-title .a{font-family:"Instrument Serif";font-size:15cqw;color:#fff;letter-spacing:.02em}
-.mu-title .b{display:block;font-family:"Caveat";font-weight:700;font-size:24cqw;color:#fff;margin:-5cqw 0 0 14cqw;transform:rotate(-6deg);text-shadow:0 4px 20px rgba(0,0,0,.6)}
-.mu-p{position:absolute;width:29cqw;overflow:hidden;z-index:1;box-shadow:0 20px 40px rgba(0,0,0,.6)}
-.mu-p img{width:100%;height:100%;object-fit:cover}
-.mu-cut{position:absolute;left:50%;bottom:0;height:68cqh;margin-left:calc(var(--w,300px)/-2);z-index:3;filter:drop-shadow(0 26px 30px rgba(0,0,0,.7))}
-.mu-lab{position:absolute;z-index:5;background:#f3ead8;color:#7a1018;font:800 4.2cqw/1.05 "Manrope";padding:1.6cqw 2.8cqw;border-radius:2cqw;box-shadow:0 0 0 .9cqw #fff,0 10px 20px rgba(0,0,0,.45);white-space:nowrap}
-.mu-k{position:absolute;bottom:3cqh;left:5cqw;right:5cqw;display:flex;justify-content:space-between;font:700 2.2cqw "Space Mono";letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);z-index:6}
+/* ===== COVER STAR ===== */
+#muse{--bg:#2a0306;color:#fff}
+.mu-ghost{position:absolute;right:-18cqw;top:6cqh;height:70cqh;width:auto;max-width:none;opacity:.42;mix-blend-mode:screen;z-index:1;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 35%,#000 70%,transparent),linear-gradient(transparent,#000 15%,#000 60%,transparent);-webkit-mask-composite:source-in;mask:linear-gradient(90deg,transparent,#000 35%,#000 70%,transparent),linear-gradient(transparent,#000 15%,#000 60%,transparent);mask-composite:intersect;filter:blur(.3cqw)}
+.mu-meta{position:absolute;top:4.2cqh;left:5cqw;right:5cqw;display:flex;justify-content:space-between;font:700 2cqw "Space Mono";letter-spacing:.18em;text-transform:uppercase;color:#ffcdc2;z-index:2;border-bottom:1px solid rgba(255,210,200,.45);padding-bottom:1.2cqw}
+.mu-mast{position:absolute;top:calc(4.2cqh + 5cqw);left:0;right:0;text-align:center;font-family:"Abril Fatface";font-size:24.5cqw;white-space:nowrap;line-height:.9;letter-spacing:-.01em;color:#fff1e8;z-index:2;text-shadow:0 10px 40px rgba(60,0,0,.5)}
+.mu-mast span{display:inline-block}
+.mu-cut{position:absolute;left:46cqw;bottom:0;height:76cqh;width:auto;max-width:none;z-index:3;filter:drop-shadow(0 0 2px rgba(255,255,255,.85)) drop-shadow(0 0 36px rgba(255,80,70,.55)) drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.mu-tab{position:absolute;left:5cqw;top:calc(4.2cqh + 38cqw);z-index:4;background:#fff1e8;color:#a3121a;font:700 2.3cqw "Space Mono";letter-spacing:.24em;text-transform:uppercase;padding:1cqw 2cqw}
+.mu-lines{position:absolute;left:5cqw;width:42cqw;top:calc(4.2cqh + 44cqw);z-index:4}
+.mu-l{padding:1.8cqw 0;border-top:1px solid rgba(255,210,200,.35)}
+.mu-l small{display:block;font:700 2cqw "Space Mono";letter-spacing:.2em;color:#ff8c7c}
+.mu-l b{display:block;font-family:"Anton";font-weight:400;font-size:6.6cqw;line-height:.95;text-transform:uppercase;color:#fff;margin-top:.6cqw}
+.mu-l i{display:block;font-family:"Instrument Serif";font-size:4.3cqw;line-height:1.05;color:#ffd3c8;margin-top:.6cqw}
+.mu-note{position:absolute;left:5cqw;top:calc(4.2cqh + 27cqw);z-index:5;font-family:"Permanent Marker";font-size:8cqw;color:#fff;transform:rotate(-10deg);clip-path:inset(0 100% 0 0);text-shadow:0 2px 10px rgba(0,0,0,.4)}
+.mu-arrow{position:absolute;left:34cqw;top:calc(4.2cqh + 26cqw);width:16cqw;z-index:5;overflow:visible}
+.mu-arrow path{fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.mu-strip{position:absolute;left:-4cqw;bottom:3.5cqh;width:62cqw;z-index:5;background:#f3e9d6;color:#151112;padding:2.4cqw 4cqw 2.4cqw 7cqw;transform:rotate(-4deg);box-shadow:0 10px 24px rgba(0,0,0,.45);
+  clip-path:polygon(0 8%,6% 0,14% 9%,22% 2%,31% 8%,40% 1%,50% 9%,60% 2%,69% 8%,79% 0,88% 9%,96% 2%,100% 7%,100% 92%,94% 100%,85% 91%,76% 99%,66% 92%,56% 100%,46% 91%,36% 99%,26% 92%,16% 100%,7% 92%,0 98%)}
+.mu-strip b{display:block;font-family:"Anton";font-weight:400;font-size:7.4cqw;line-height:.95;text-transform:uppercase}
+.mu-strip i{font-family:"Instrument Serif";font-size:4.4cqw;color:#a3121a}
+.mu-bar{position:absolute;right:4cqw;bottom:3cqh;width:17cqw;background:#fff;padding:1.4cqw 1.4cqw .8cqw;z-index:5}
+.mu-bar i{display:block;height:7cqw;background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 3px,#000 3px 4px,transparent 4px 7px,#000 7px 10px,transparent 10px 11px)}
+.mu-bar span{display:block;font:700 1.5cqw "Space Mono";text-align:center;margin-top:.4cqw;color:#000}
 
 /* ===== GARBA ISSUE (torn strip) ===== */
 #garba{--bg:#5a0a0e;color:var(--cream)}
@@ -306,7 +332,7 @@ button,input{font:inherit;color:inherit}
 .gb-line span{font-family:"Instrument Serif";font-style:italic;font-size:4.2cqw;color:#ffd7c4}
 
 /* ===== 9 LETTER ===== */
-#letter{--bg:#120a04;height:auto;min-height:100svh;padding:9vh 0 12vh;background:#120a04 url(img/k-letterplate.jpg) center top/cover no-repeat}
+#letter{--bg:#120a04;height:auto;min-height:100svh;padding:9vh 0 12vh;background:#120a04 url(img/k-letterplate.jpg?v=4) center top/cover no-repeat}
 #letter .lt-paper{box-shadow:0 30px 60px rgba(0,0,0,.6)}
 #letter .ab{position:relative;left:auto;transform:none;margin:0 auto;height:auto;container-type:inline-size}
 .lt-paper{position:relative;margin:0 4cqw;background:#fdfaf2;padding:10cqw 7cqw 9cqw 12cqw;transform:rotate(-1.2deg);box-shadow:0 20px 40px rgba(0,0,0,.3);
@@ -389,7 +415,7 @@ button,input{font:inherit;color:inherit}
     <div class="sn-clock"><div><b id="snD">00</b><span>days</span></div><div><b id="snH">00</b><span>hrs</span></div><div><b id="snM">00</b><span>min</span></div><div><b id="snS">00</b><span>sec</span></div></div>
     <div class="sn-note">no peeking,<br>Bittu ♥</div>
     <div class="sn-jay" id="snJay"><button class="pb red" id="snPreview">preview now ▶</button><small>only visible on your link</small></div>
-    <img class="sn-cut" id="snCut" src="img/forehead-halftone.webp" alt="">
+    <img class="sn-cut" id="snCut" src="img/forehead-halftone.webp?v=4" alt="">
     <div class="sn-bar b1">CLASSIFIED</div><div class="sn-bar b2">TOP SECRET</div>
   </div>
   <div class="sn-out" id="snOut">OUT<br>NOW!</div>
@@ -417,10 +443,10 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="cover" data-f="p. 01 — the cover">
     <div class="side l">the birthday issue</div><div class="side r">kinjal · 26</div>
     <div class="ab">
-      <img class="plate" id="cPlate" src="img/k-coverplate.jpg" alt="">
+      <img class="plate" id="cPlate" src="img/k-coverplate.jpg?v=4" alt="">
       <div class="c-mast" id="cMast" data-rn="KINJAL"></div>
       <div class="c-issue" id="cIssue"><span>issue nº 26</span><span>the birthday issue</span><span>by jay</span></div>
-      <img class="c-cut halftone" id="cCut" src="img/forehead-halftone.webp" alt="Jay kissing Kinjal's forehead">
+      <img class="c-cut halftone" id="cCut" src="img/forehead-halftone.webp?v=4" alt="Jay kissing Kinjal's forehead">
       <div class="c-line" id="cl1" style="left:5cqw;top:calc(5cqh + 34cqw)"><span class="k">exclusive</span><b>the girl who never stops talking</b><span>(and why he never wants her to)</span></div>
       <div class="c-line" id="cl2" style="right:5cqw;top:calc(5cqh + 34cqw);text-align:right"><b>26 reasons</b><span>he's completely obsessed — p. 12</span></div>
       <div class="c-line" id="cl3" style="left:5cqw;bottom:14cqh"><b>where it all started</b><span>two cups of coffee change everything</span></div>
@@ -434,13 +460,13 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="hb" data-f="p. 02 — the poster">
     <div class="ab">
       <div class="hb-words anton" id="hbWords"><div>HAPPY</div><div>BIRTH</div><div>DAY</div></div>
-      <div class="film" id="hbF1" style="right:-4cqw;top:5cqh;width:46cqw"><div class="hd"><span>KINJAL 400</span><span>▸ 26</span></div><img class="bw" src="img/annaidli.jpg" alt="" style="object-position:50% 30%"><div class="ft"><span>ANNA IDLI</span><span>BY JAY</span></div></div>
-      <div class="film" id="hbF2" style="right:-10cqw;top:31cqh;width:52cqw"><div class="hd"><span>KINJAL 400</span><span>▸ 07</span></div><img src="img/balsa.jpg" alt="" style="object-position:50% 25%;filter:sepia(.25) saturate(1.1)"><div class="ft"><span>BALSA</span><span>16.07</span></div></div>
-      <img class="abs halftone" id="hbCut" src="img/akina-halftone.webp" alt="Kinjal and Jay at Akina" style="left:-6cqw;bottom:6cqh;height:68cqh;z-index:4">
+      <div class="film" id="hbF1" style="right:-4cqw;top:5cqh;width:46cqw"><div class="hd"><span>KINJAL 400</span><span>▸ 26</span></div><img class="bw" src="img/annaidli.jpg?v=4" alt="" style="object-position:50% 30%"><div class="ft"><span>ANNA IDLI</span><span>BY JAY</span></div></div>
+      <div class="film" id="hbF2" style="right:-10cqw;top:31cqh;width:52cqw"><div class="hd"><span>KINJAL 400</span><span>▸ 07</span></div><img src="img/balsa.jpg?v=4" alt="" style="object-position:50% 25%;filter:sepia(.25) saturate(1.1)"><div class="ft"><span>BALSA</span><span>16.07</span></div></div>
+      <img class="abs halftone" id="hbCut" src="img/akina-halftone.webp?v=4" alt="Kinjal and Jay at Akina" style="left:-6cqw;bottom:6cqh;height:68cqh;z-index:4">
       <div class="hb-copy" id="hbCopy">26 looks good on you. Today we celebrate like it's the biggest release of the year — because it is.</div>
       <div class="scrib" id="hbScrib" style="left:10cqw;top:15cqh;font-size:22cqw;transform:rotate(-14deg)">Bittu</div>
       <svg class="abs draw" id="hbHeart" viewBox="0 0 100 90" style="right:10cqw;top:26cqh;width:20cqw;z-index:7;overflow:visible"><path d="M50 84 C 18 62, 4 44, 10 26 C 16 8, 40 6, 50 28 C 60 6, 86 8, 90 26 C 96 46, 78 64, 46 86 M 70 80 l 14 8" stroke-width="3.4"/></svg>
-      <div class="cam" id="hbCam" style="right:-12cqw;bottom:2cqh"><div class="scr"><span class="rec">● PLAY</span><img src="img/garba.jpg" alt="" style="object-position:35% 40%"></div><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+      <div class="cam" id="hbCam" style="right:-12cqw;bottom:2cqh"><div class="scr"><span class="rec">● PLAY</span><img src="img/garba.jpg?v=4" alt="" style="object-position:35% 40%"></div><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
     </div>
     <div class="flash" id="flash"></div>
   </section>
@@ -449,10 +475,10 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="anna" data-f="p. 03 — where it started">
     <div class="side l">chapter one</div><div class="side r">anna idli</div>
     <div class="ab">
-      <img class="plate" id="anPlate" src="img/k-annaplate.jpg" alt="">
+      <img class="plate" id="anPlate" src="img/k-annaplate.jpg?v=4" alt="">
       <div class="an-words anton" id="anWords"><div>WHERE</div><div>IT ALL</div><div>STARTED</div></div>
-      <div class="film" id="anFilm" style="left:6cqw;top:46cqh;width:38cqw;z-index:3"><div class="hd"><span>ANNA IDLI</span><span>▸ 01</span></div><img src="img/annaidli.jpg" alt="" style="object-position:50% 40%"><div class="ft"><span>CHAPTER</span><span>ONE</span></div></div>
-      <img class="an-cut halftone" id="anCut" src="img/annaidli-halftone.webp" alt="Kinjal and Jay at Anna Idli">
+      <div class="film" id="anFilm" style="left:6cqw;top:46cqh;width:38cqw;z-index:3"><div class="hd"><span>ANNA IDLI</span><span>▸ 01</span></div><img src="img/annaidli.jpg?v=4" alt="" style="object-position:50% 40%"><div class="ft"><span>CHAPTER</span><span>ONE</span></div></div>
+      <img class="an-cut halftone" id="anCut" src="img/annaidli-halftone.webp?v=4" alt="Kinjal and Jay at Anna Idli">
       <div class="stampc" id="anStamp" style="right:8cqw;top:30cqh;width:30cqw;height:30cqw">
         <svg viewBox="0 0 100 100"><defs><path id="sc" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><text><textPath href="#sc">ANNA IDLI · EST. US · ANNA IDLI · EST. US ·</textPath></text></svg>
         <b>CH.<br>01</b>
@@ -466,7 +492,7 @@ button,input{font:inherit;color:inherit}
   <!-- 4 AGE -->
   <section class="poster" id="age" data-f="p. 04 — twenty six">
     <div class="ab">
-      <img class="plate" id="agPlate" src="img/k-ember.jpg" alt="Kinjal laughing, glowing in warm red light">
+      <img class="plate" id="agPlate" src="img/k-ember.jpg?v=4" alt="Kinjal laughing, glowing in warm red light">
       <div class="ag-k"><span>chapter 26</span><span>kinjal · the birthday issue</span></div>
       <div class="ag-num anton o">26</div>
       <div class="ag-num anton" id="agNum">0</div>
@@ -483,27 +509,35 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="muse" data-f="p. 05 — cover star">
     <div class="side l" style="color:#fff">cover star</div><div class="side r" style="color:#fff">kinjal</div>
     <div class="ab">
-      <div class="weave"></div>
-      <div class="mu-title" id="muTitle"><span class="a">Kinjal</span><span class="b">my Bittu</span></div>
-      <div class="mu-p" id="muP1" style="left:3cqw;top:30cqh;height:44cqh"><img src="img/k-duo1.jpg" alt=""></div>
-      <div class="mu-p" id="muP2" style="left:35.5cqw;top:25cqh;height:40cqh"><img src="img/k-duo2.jpg" alt=""></div>
-      <div class="mu-p" id="muP3" style="left:68cqw;top:30cqh;height:44cqh"><img src="img/k-duo3.jpg" alt=""></div>
-      <img class="mu-cut" id="muCut" src="img/k-red2.webp" alt="Kinjal in a red top">
-      <div class="mu-lab" style="left:4cqw;top:47cqh;transform:rotate(-4deg)">Professional<br>Yapper</div>
-      <div class="mu-lab" style="right:4cqw;top:56cqh;transform:rotate(3deg)">Chef Kinjal</div>
-      <div class="mu-lab" style="left:3cqw;top:72cqh;transform:rotate(2deg)">Two-coffee<br>girl ☕</div>
-      <div class="mu-lab" style="right:3cqw;top:80cqh;transform:rotate(-3deg)">Jay's<br>favourite</div>
-      <div class="mu-k"><span>cover star</span><span>issue nº 26</span></div>
+      <img class="plate" id="muPlate" src="img/k-museplate.jpg?v=4" alt="">
+      <img class="mu-ghost" id="muGhost" src="img/k-duo2.jpg?v=4" alt="">
+      <div class="mu-meta"><span>issue nº 26</span><span>the birthday issue</span><span>nov · 2026</span></div>
+      <div class="mu-mast" id="muMast">KINJAL</div>
+      <img class="mu-cut" id="muCut" src="img/k-red2.webp?v=4" alt="Kinjal in a red top">
+      <div class="mu-tab">exclusive</div>
+      <div class="mu-note" id="muNote">my Bittu</div>
+      <svg class="mu-arrow" id="muArrow" viewBox="0 0 60 40"><path d="M2 6 C 20 2, 40 10, 52 30 M 40 28 L 53 31 L 54 18"/></svg>
+      <div class="mu-lines" id="muLines">
+        <div class="mu-l"><small>01</small><b>Professional Yapper</b><i>talks nonstop. he loves it.</i></div>
+        <div class="mu-l"><small>02</small><b>Chef Kinjal</b><i>pizzas, wonky and perfect</i></div>
+        <div class="mu-l"><small>03</small><b>The two-coffee girl</b><i>where it all began</i></div>
+        <div class="mu-l"><small>04</small><b>Jay's favourite</b><i>obviously. always.</i></div>
+      </div>
+      <div class="mu-strip" id="muStrip"><b>The cover star</b><i>26, engaged &amp; glowing</i></div>
+      <div class="mu-bar"><i></i><span>1 OF 1</span></div>
     </div>
   </section>
 
-  <!-- 5 CONTACT SHEET -->
-  <section class="poster" id="contact" data-f="p. 06 — contact sheet">
-    <div class="side l" style="color:#fff">kinjal 400</div><div class="side r" style="color:#fff">contact sheet</div>
+  <!-- 5 DARKROOM -->
+  <section class="poster" id="contact" data-f="p. 06 — the darkroom">
+    <div class="side l" style="color:#fff">the darkroom</div><div class="side r" style="color:#fff">roll 26</div>
     <div class="ab">
-      <div class="cs-hd"><b>CONTACT<br>SHEET</b><span style="text-align:right">kinjal 400<br>roll 26 · by jay</span></div>
-      <div class="cs-grid" id="csGrid"></div>
-      <div class="cs-zoom" id="csZoom"><img src="img/shades.jpg" alt="Kinjal and Jay laughing at the photoshoot" style="object-position:50% 30%"><div class="cap">the keeper. ♥</div></div>
+      <div class="safe"></div><div class="bulb"></div>
+      <div class="dr-word w1">DARK</div><div class="dr-word w2">ROOM</div>
+      <div class="dr-k"><div class="t"><b>Darkroom</b>developing us.</div><div class="m">roll nº 26<br>kinjal 400<br>36 exp.</div></div>
+      <svg class="lines" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M-3 20 Q50 25 103 21" vector-effect="non-scaling-stroke"/><path d="M-3 46 Q50 50 103 45" vector-effect="non-scaling-stroke"/></svg>
+      <div id="prints"></div>
+      <div class="cs-zoom" id="csZoom"><img src="img/k-keeper.jpg?v=4" alt="Kinjal and Jay laughing at the photoshoot" style="object-position:50% 30%"><div class="cap"><small>frame 26 · fully developed</small><b>The keeper.</b><i>my favourite picture of my favourite person ♥</i></div></div>
     </div>
   </section>
 
@@ -511,10 +545,10 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="tour" data-f="p. 07 — the love tour">
     <div class="side l" style="color:#fff">the love tour</div><div class="side r" style="color:#fff">sold out</div>
     <div class="ab">
-      <img class="plate" id="tPlate" src="img/k-ghostplate.jpg" alt="">
+      <img class="plate" id="tPlate" src="img/k-ghostplate.jpg?v=4" alt="">
       <div class="t-hd"><div class="k">kinjal & jay present</div><div class="big">The Love<br>Tour</div><div class="sub">live, in person, every weekend</div></div>
       <div class="t-list" id="tList"></div>
-      <img class="t-cut glowcut2" id="tCut" src="img/k-red1.webp" alt="Kinjal">
+      <img class="t-cut glowcut2" id="tCut" src="img/k-red1.webp?v=4" alt="Kinjal">
       <div class="t-foot" id="tFoot">+ more dates<br>forever ♥</div>
     </div>
   </section>
@@ -524,10 +558,10 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="garba" data-f="p. 08 — the garba issue">
     <div class="side l" style="color:#fff">garba queen</div><div class="side r" style="color:#fff">dandiya edition</div>
     <div class="ab">
-      <img class="plate" id="gbPlate" src="img/k-garbaplate.jpg" alt="">
+      <img class="plate" id="gbPlate" src="img/k-garbaplate.jpg?v=4" alt="">
       <div class="gb-mast" id="gbMast">KINJAL</div>
       <div class="gb-sub"><span>the garba issue</span><span>navratri special</span></div>
-      <img class="gb-cut" id="gbCut" src="img/k-garba.webp" alt="Kinjal in a black lehenga at garba">
+      <img class="gb-cut" id="gbCut" src="img/k-garba.webp?v=4" alt="Kinjal in a black lehenga at garba">
       <div class="gb-strip" id="gbStrip"><b>Garba Queen</b><i>spin. smile. repeat.</i></div>
       <div class="gb-line" id="gbL1" style="left:5cqw;top:64cqh"><b>1,000+ spins</b><span>and still not dizzy</span></div>
       <div class="gb-line" id="gbL2" style="right:5cqw;top:72cqh;text-align:right"><b>1 dupatta</b><span>held on to (by Jay)</span></div>
@@ -542,7 +576,7 @@ button,input{font:inherit;color:inherit}
       <div class="np-head" id="npHead"><span>SHE</span> <span>SAID</span><br><span>YES!</span></div>
       <div class="np-dek" id="npDek">Local man asks the question of his life. Local girl says yes before he finishes the sentence.</div>
       <div class="np-body">
-        <div class="np-photo" id="npPhoto"><img src="img/cheek.jpg" alt="Kinjal kissing Jay on the cheek" style="object-position:50% 30%"><span>PICTURED: the happiest man in the city, moments later.</span></div>
+        <div class="np-photo" id="npPhoto"><img src="img/cheek.jpg?v=4" alt="Kinjal kissing Jay on the cheek" style="object-position:50% 30%"><span>PICTURED: the happiest man in the city, moments later.</span></div>
         <div class="np-col"><p>In what witnesses are calling "completely expected", Kinjal — known to exactly one man in the world as Bittu — said yes on the 16th of July.</p><p>The pair's story began over two cups of coffee at Anna Idli and has since toured Lonavala, Cozy Box, Akina and every café in the city.</p><p>Sources confirm he has not stopped smiling since. More on p. 26.</p></div>
       </div>
       <svg class="ring-doodle" id="npRing" viewBox="0 0 300 150" style="left:2cqw;top:calc(4cqh + 19cqw);width:96cqw"><path d="M150 12 C 260 10, 300 50, 280 100 C 260 140, 60 150, 22 110 C -10 70, 40 20, 160 16 C 200 15, 230 20, 250 30"/></svg>
@@ -556,7 +590,7 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="coll" data-f="p. 10 — the collection">
     <div class="side l" style="color:#fff">the giver</div><div class="side r" style="color:#fff">1 of 1</div>
     <div class="ab">
-      <img class="plate" id="coPlate" src="img/k-amber.jpg" alt="Kinjal sipping coffee">
+      <img class="plate" id="coPlate" src="img/k-amber.jpg?v=4" alt="Kinjal sipping coffee">
       <div class="co-hd"><div class="k">ss26 · gifts from her</div><div class="big">The Kinjal <em>Collection</em></div></div>
       <div id="stickers"></div>
       <div class="co-foot" id="coFoot">she never comes empty-handed. never empty-hearted.</div>
@@ -582,7 +616,7 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="reasons" data-f="p. 12 — 26 reasons">
     <div class="side l">26 reasons</div><div class="side r">it's not short</div>
     <div class="ab">
-      <img class="plate" id="rsPlate" src="img/k-reasonsplate.jpg" alt="">
+      <img class="plate" id="rsPlate" src="img/k-reasonsplate.jpg?v=4" alt="">
       <div class="rs-hd"><div class="big">26<br><span>REASONS</span></div><div class="k">why it's you. a very incomplete list.</div></div>
       <div class="rs-list" id="rsList"></div>
     </div>
@@ -605,10 +639,10 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="back" data-f="p. 14 — the back cover">
     <div class="side l">the end</div><div class="side r">of chapter 26</div>
     <div class="ab">
-      <img class="plate" id="bkPlate" src="img/k-backplate.jpg" alt="">
+      <img class="plate" id="bkPlate" src="img/k-backplate.jpg?v=4" alt="">
       <div class="bk-hd" id="bkHd" data-rn="HAPPY|BIRTHDAY|KINJAL"></div>
       <div class="bk-script" id="bkScript">forever yours, Jay ♥</div>
-      <img class="bk-cut halftone" id="bkCut" src="img/balsa-halftone.webp" alt="Kinjal hugging Jay">
+      <img class="bk-cut halftone" id="bkCut" src="img/balsa-halftone.webp?v=4" alt="Kinjal hugging Jay">
       <div class="bk-end">the end<br>of chapter 26.<br>chapter 27<br>starts now.</div>
       <div class="burst" style="right:5cqw;bottom:22cqh;width:26cqw;height:26cqw;background:var(--pink);font-size:5.4cqw" id="bkBurst">LIMITED<br>EDITION<br>1 of 1</div>
       <div class="bk-btns"><button class="pb red" id="replay">read again</button><button class="pb" id="confBtn">confetti!</button></div>
@@ -691,9 +725,9 @@ function cLoop() {
 }
 
 /* ---------- loader ---------- */
-const imgs = ['forehead-halftone', 'akina-halftone', 'annaidli-halftone', 'balsa-halftone', 'k-red1', 'k-red2', 'k-garba'].map(k => `img/${k}.webp`)
-  .concat(['k-ember', 'k-amber', 'k-ghostplate', 'k-garbaplate', 'k-duo1', 'k-duo2', 'k-duo3', 'k-coverplate', 'k-annaplate', 'k-reasonsplate', 'k-backplate', 'k-letterplate', 'car', 'shades'].map(k => `img/${k}.jpg`))
-  .concat(['annaidli', 'balsa', 'garba', 'akina', 'sinonnas', 'night', 'cheek', 'forehead'].map(k => `img/${k}.jpg`));
+const imgs = ['forehead-halftone', 'akina-halftone', 'annaidli-halftone', 'balsa-halftone', 'k-red1', 'k-red2', 'k-garba'].map(k => `img/${k}.webp?v=4`)
+  .concat(['k-ember', 'k-amber', 'k-ghostplate', 'k-garbaplate', 'k-duo1', 'k-duo2', 'k-duo3', 'k-coverplate', 'k-annaplate', 'k-reasonsplate', 'k-backplate', 'k-letterplate', 'car', 'shades', 'k-museplate', 'k-keeper', 'dr-akina', 'dr-sinonnas', 'dr-garba', 'dr-car', 'dr-balsa', 'dr-annaidli'].map(k => `img/${k}.jpg?v=4`))
+  .concat(['annaidli', 'balsa', 'garba', 'akina', 'sinonnas', 'night', 'cheek', 'forehead'].map(k => `img/${k}.jpg?v=4`));
 let loaded = 0; const msgs = ['gluing photos…', 'cutting paper…', 'inking the stamps…', 'drying the ink…', 'stapling it together…'];
 const shown = {v: 0};
 function bump() { loaded++; gsap.to(shown, {v: loaded/(imgs.length + 1)*100, duration: .4, onUpdate: () => { $('#pct').textContent = Math.round(shown.v); $('#pmsg').textContent = msgs[Math.min(msgs.length - 1, (shown.v/22)|0)]; }}); }
@@ -830,18 +864,26 @@ pin('#age', 200)
   .fromTo('#agTicket', {yPercent: 140, rotation: 10}, {yPercent: 0, rotation: -3, duration: .7, ease: 'back.out(1.4)'}, 1.9)
   .to({}, {duration: .4});
 
-/* 5 CONTACT SHEET */
-const sheet = [['akina', '01', 'that look', [8, 92]], ['sinonnas', '02', 'chef kinjal', [52, 92]], ['garba', '03', 'that laugh!!', [8, 92]], ['car', '04', 'lonavala ✌️', [40, 92]], ['balsa', '05', 'that hug', [8, 92]], ['annaidli', '06', 'day one ♥', [44, 92]]];
-$('#csGrid').innerHTML = sheet.map(([k, n, note, [l, t]], i) => `<div class="cs-f"><img src="img/${k}.jpg" alt="" style="object-position:${k === 'garba' ? '30%' : k === 'car' ? '65%' : '50%'} 30%"><span class="n">▸ ${n}A</span>
-  <svg class="cs-ring" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 4 C 86 2, 98 26, 96 52 C 94 82, 70 98, 46 96 C 16 94, 2 74, 4 48 C 6 22, 26 6, 56 6" vector-effect="non-scaling-stroke"/></svg>
-  <div class="cs-note" style="left:${l}%;top:${t}%;transform:rotate(${i % 2 ? 6 : -6}deg)">${note}</div></div>`).join('');
-prepDraw('.cs-ring path');
-const csTl = pin('#contact', 360);
-csTl.fromTo('.cs-f', {opacity: 0, y: 40}, {opacity: 1, y: 0, duration: .4, stagger: .1}, 0);
-$$('.cs-f').forEach((f, i) => csTl.to(f.querySelector('.cs-ring path'), {strokeDashoffset: 0, duration: .35, ease: 'none'}, .8 + i*.38).to(f.querySelector('.cs-note'), {opacity: 1, duration: .15}, .95 + i*.38));
-csTl.fromTo('#csZoom', {opacity: 0, clipPath: 'inset(40% 30% 40% 30%)'}, {opacity: 1, clipPath: 'inset(0% 0% 0% 0%)', duration: .8, ease: 'power3.inOut'}, 3.3)
-  .fromTo('#csZoom img', {scale: 1.4}, {scale: 1, duration: 1}, 3.3)
-  .fromTo('#csZoom .cap', {opacity: 0, y: 30}, {opacity: 1, y: 0, duration: .4}, 3.9)
+/* 5 DARKROOM */
+const sheet = [
+  ['akina', '01', 'that look', 5, '20cqh', 36, -5],
+  ['sinonnas', '02', 'chef kinjal', 55, 'calc(21cqh + 1cqw)', 36, 4],
+  ['garba', '03', 'that laugh!!', 7, '46cqh', 35, 3],
+  ['car', '04', 'lonavala ✌️', 55, '45cqh', 36, -4],
+  ['balsa', '05', 'that hug', 8, '72cqh', 33, -7],
+  ['annaidli', '06', 'day one ♥', 54, '71cqh', 36, 6]];
+$('#prints').innerHTML = sheet.map(([k, n, note, l, t, w, r], i) => `<div class="pr" style="left:${l}cqw;top:${t};width:${w}cqw;--r:${r}deg;--d:${-i*.8}s"><div class="cs-f">${i < 4 ? '<i class="pin"></i>' : '<i class="tape" style="top:-2.6cqw;left:50%;margin-left:-11cqw;transform:rotate(-4deg)"></i>'}<img src="img/dr-${k}.jpg?v=4" alt=""><div class="dev"></div><span class="n">▸ ${n}A</span><div class="cs-note">${note}</div></div></div>`).join('');
+const csTl = pin('#contact', 380);
+csTl.fromTo('.dr-word', {xPercent: (i) => i ? 30 : -30, opacity: 0}, {xPercent: 0, opacity: 1, duration: .6, stagger: .1}, 0)
+    .fromTo('.dr-k', {opacity: 0, y: -24}, {opacity: 1, y: 0, duration: .4}, 0)
+    .fromTo('#prints .cs-f', {y: -90, opacity: 0}, {y: 0, opacity: 1, duration: .5, stagger: .14, ease: 'back.out(1.6)'}, .2);
+$$('#prints .cs-f').forEach((f, i) => csTl
+  .fromTo(f.querySelector('.dev'), {opacity: 1}, {opacity: 0, duration: .55, ease: 'power1.in'}, 1 + i*.36)
+  .fromTo(f.querySelector('img'), {filter: 'brightness(2.3) contrast(.35) blur(4px)'}, {filter: 'brightness(1) contrast(1) blur(0px)', duration: .6, ease: 'power1.out'}, 1 + i*.36)
+  .to(f.querySelector('.cs-note'), {opacity: 1, duration: .15}, 1.45 + i*.36));
+csTl.fromTo('#csZoom', {opacity: 0, clipPath: 'inset(42% 30% 42% 30%)'}, {opacity: 1, clipPath: 'inset(0% 0% 0% 0%)', duration: .8, ease: 'power3.inOut'}, 3.5)
+  .fromTo('#csZoom img', {scale: 1.4}, {scale: 1, duration: 1}, 3.5)
+  .fromTo('#csZoom .cap > *', {opacity: 0, y: 30}, {opacity: 1, y: 0, duration: .35, stagger: .12}, 4.1)
   .to({}, {duration: .5});
 
 /* 6 LOVE TOUR */
@@ -858,14 +900,21 @@ tTl.fromTo('#tCut', {xPercent: 60, opacity: 0}, {xPercent: 0, opacity: 1, durati
 
 
 /* COVER STAR */
-function sizeMore() { $$('#muCut, #gbCut').forEach(i => i.style.setProperty('--w', i.offsetWidth + 'px')); }
-$$('#muCut, #gbCut').forEach(i => i.complete ? sizeMore() : i.addEventListener('load', sizeMore)); addEventListener('resize', sizeMore);
-pin('#muse', 240)
-  .fromTo('#muTitle .a', {yPercent: -120, opacity: 0}, {yPercent: 0, opacity: 1, duration: .5, ease: 'power4.out'}, 0)
-  .fromTo(['#muP1', '#muP2', '#muP3'], {yPercent: -130, opacity: 0}, {yPercent: 0, opacity: 1, duration: .6, stagger: .18, ease: 'power3.out'}, .2)
-  .fromTo('#muCut', {yPercent: 50, opacity: 0, scale: .9}, {yPercent: 0, opacity: 1, scale: 1, duration: .8, ease: 'power3.out'}, .9)
-  .fromTo('#muTitle .b', {clipPath: 'inset(0 100% 0 0)'}, {clipPath: 'inset(0 0% 0 0)', duration: .6, ease: 'none'}, 1.4)
-  .fromTo('#muse .mu-lab', {scale: 0, opacity: 0}, {scale: 1, opacity: 1, duration: .3, stagger: .2, ease: 'back.out(3)', onStart: () => buzz(15)}, 1.9)
+function sizeMore() { $$('#gbCut').forEach(i => i.style.setProperty('--w', i.offsetWidth + 'px')); }
+$$('#gbCut').forEach(i => i.complete ? sizeMore() : i.addEventListener('load', sizeMore)); addEventListener('resize', sizeMore);
+$('#muMast').innerHTML = [...'KINJAL'].map(c => `<span>${c}</span>`).join('');
+(() => { const p = $('#muArrow path'), L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; })();
+pin('#muse', 260)
+  .fromTo('#muPlate', {scale: 1.15}, {scale: 1, duration: 3.2, ease: 'none'}, 0)
+  .fromTo('#muGhost', {xPercent: 30, opacity: 0}, {xPercent: 0, opacity: .42, duration: 1.4, ease: 'power2.out'}, 0)
+  .fromTo('.mu-meta', {opacity: 0}, {opacity: 1, duration: .3}, 0)
+  .fromTo('#muMast span', {yPercent: 110, opacity: 0}, {yPercent: 0, opacity: 1, duration: .5, stagger: .07, ease: 'power4.out'}, .1)
+  .fromTo('#muCut', {yPercent: 25, opacity: 0}, {yPercent: 0, opacity: 1, duration: .9, ease: 'power3.out'}, .6)
+  .fromTo('.mu-tab', {xPercent: -120}, {xPercent: 0, duration: .3}, 1.2)
+  .fromTo('.mu-l', {x: -40, opacity: 0}, {x: 0, opacity: 1, duration: .35, stagger: .16}, 1.3)
+  .to('#muNote', {clipPath: 'inset(0 0% 0 0)', duration: .5, ease: 'none'}, 2)
+  .to('#muArrow path', {strokeDashoffset: 0, duration: .4, ease: 'none'}, 2.4)
+  .fromTo('#muStrip', {xPercent: -110}, {xPercent: 0, duration: .45, ease: 'power4.out', onComplete: () => buzz(20)}, 2.6)
   .to({}, {duration: .5});
 
 /* GARBA ISSUE */
