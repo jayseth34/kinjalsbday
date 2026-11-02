@@ -306,7 +306,8 @@ button,input{font:inherit;color:inherit}
 .gb-line span{font-family:"Instrument Serif";font-style:italic;font-size:4.2cqw;color:#ffd7c4}
 
 /* ===== 9 LETTER ===== */
-#letter{--bg:var(--kraft);height:auto;min-height:100svh;padding:9vh 0 12vh}
+#letter{--bg:#120a04;height:auto;min-height:100svh;padding:9vh 0 12vh;background:#120a04 url(img/k-letterplate.jpg) center top/cover no-repeat}
+#letter .lt-paper{box-shadow:0 30px 60px rgba(0,0,0,.6)}
 #letter .ab{position:relative;left:auto;transform:none;margin:0 auto;height:auto;container-type:inline-size}
 .lt-paper{position:relative;margin:0 4cqw;background:#fdfaf2;padding:10cqw 7cqw 9cqw 12cqw;transform:rotate(-1.2deg);box-shadow:0 20px 40px rgba(0,0,0,.3);
   background-image:linear-gradient(90deg,transparent 8cqw,rgba(200,25,31,.35) 8cqw,rgba(200,25,31,.35) calc(8cqw + 1.5px),transparent calc(8cqw + 1.5px)),repeating-linear-gradient(180deg,transparent 0 calc(7.4cqw - 1px),rgba(47,91,224,.25) calc(7.4cqw - 1px) 7.4cqw);background-position:0 0,0 9cqw}
@@ -332,7 +333,7 @@ button,input{font:inherit;color:inherit}
 .rs-hd .big span{color:transparent;-webkit-text-stroke:.45cqw var(--cream)}
 .rs-hd .k{font:700 2.6cqw "Space Mono";letter-spacing:.24em;text-transform:uppercase;margin-top:2cqw}
 .rs-list{position:absolute;top:calc(5cqh + 44cqw);left:6cqw;right:6cqw;bottom:5cqh;columns:2;column-gap:4cqw}
-.rs-i{break-inside:avoid;display:flex;gap:1.6cqw;font-family:"Instrument Serif";font-size:4.1cqw;line-height:1.05;margin-bottom:1.9cqw;opacity:.18;transition:opacity .3s}
+.rs-i{text-shadow:0 2px 10px rgba(0,0,0,.45);break-inside:avoid;display:flex;gap:1.6cqw;font-family:"Instrument Serif";font-size:4.1cqw;line-height:1.05;margin-bottom:1.9cqw;opacity:.18;transition:opacity .3s}
 .rs-i b{font:700 2.6cqw "Space Mono";min-width:5cqw;padding-top:.6cqw}
 .rs-i span{position:relative}
 .rs-i.on{opacity:1}
@@ -416,6 +417,7 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="cover" data-f="p. 01 — the cover">
     <div class="side l">the birthday issue</div><div class="side r">kinjal · 26</div>
     <div class="ab">
+      <img class="plate" id="cPlate" src="img/k-coverplate.jpg" alt="">
       <div class="c-mast" id="cMast" data-rn="KINJAL"></div>
       <div class="c-issue" id="cIssue"><span>issue nº 26</span><span>the birthday issue</span><span>by jay</span></div>
       <img class="c-cut halftone" id="cCut" src="img/forehead-halftone.webp" alt="Jay kissing Kinjal's forehead">
@@ -447,6 +449,7 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="anna" data-f="p. 03 — where it started">
     <div class="side l">chapter one</div><div class="side r">anna idli</div>
     <div class="ab">
+      <img class="plate" id="anPlate" src="img/k-annaplate.jpg" alt="">
       <div class="an-words anton" id="anWords"><div>WHERE</div><div>IT ALL</div><div>STARTED</div></div>
       <div class="film" id="anFilm" style="left:6cqw;top:46cqh;width:38cqw;z-index:3"><div class="hd"><span>ANNA IDLI</span><span>▸ 01</span></div><img src="img/annaidli.jpg" alt="" style="object-position:50% 40%"><div class="ft"><span>CHAPTER</span><span>ONE</span></div></div>
       <img class="an-cut halftone" id="anCut" src="img/annaidli-halftone.webp" alt="Kinjal and Jay at Anna Idli">
@@ -500,7 +503,7 @@ button,input{font:inherit;color:inherit}
     <div class="ab">
       <div class="cs-hd"><b>CONTACT<br>SHEET</b><span style="text-align:right">kinjal 400<br>roll 26 · by jay</span></div>
       <div class="cs-grid" id="csGrid"></div>
-      <div class="cs-zoom" id="csZoom"><img src="img/forehead.jpg" alt="" style="object-position:50% 30%"><div class="cap">the keeper. ♥</div></div>
+      <div class="cs-zoom" id="csZoom"><img src="img/shades.jpg" alt="Kinjal and Jay laughing at the photoshoot" style="object-position:50% 30%"><div class="cap">the keeper. ♥</div></div>
     </div>
   </section>
 
@@ -579,6 +582,7 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="reasons" data-f="p. 12 — 26 reasons">
     <div class="side l">26 reasons</div><div class="side r">it's not short</div>
     <div class="ab">
+      <img class="plate" id="rsPlate" src="img/k-reasonsplate.jpg" alt="">
       <div class="rs-hd"><div class="big">26<br><span>REASONS</span></div><div class="k">why it's you. a very incomplete list.</div></div>
       <div class="rs-list" id="rsList"></div>
     </div>
@@ -601,6 +605,7 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="back" data-f="p. 14 — the back cover">
     <div class="side l">the end</div><div class="side r">of chapter 26</div>
     <div class="ab">
+      <img class="plate" id="bkPlate" src="img/k-backplate.jpg" alt="">
       <div class="bk-hd" id="bkHd" data-rn="HAPPY|BIRTHDAY|KINJAL"></div>
       <div class="bk-script" id="bkScript">forever yours, Jay ♥</div>
       <img class="bk-cut halftone" id="bkCut" src="img/balsa-halftone.webp" alt="Kinjal hugging Jay">
@@ -687,7 +692,7 @@ function cLoop() {
 
 /* ---------- loader ---------- */
 const imgs = ['forehead-halftone', 'akina-halftone', 'annaidli-halftone', 'balsa-halftone', 'k-red1', 'k-red2', 'k-garba'].map(k => `img/${k}.webp`)
-  .concat(['k-ember', 'k-amber', 'k-ghostplate', 'k-garbaplate', 'k-duo1', 'k-duo2', 'k-duo3'].map(k => `img/${k}.jpg`))
+  .concat(['k-ember', 'k-amber', 'k-ghostplate', 'k-garbaplate', 'k-duo1', 'k-duo2', 'k-duo3', 'k-coverplate', 'k-annaplate', 'k-reasonsplate', 'k-backplate', 'k-letterplate', 'car', 'shades'].map(k => `img/${k}.jpg`))
   .concat(['annaidli', 'balsa', 'garba', 'akina', 'sinonnas', 'night', 'cheek', 'forehead'].map(k => `img/${k}.jpg`));
 let loaded = 0; const msgs = ['gluing photos…', 'cutting paper…', 'inking the stamps…', 'drying the ink…', 'stapling it together…'];
 const shown = {v: 0};
@@ -784,7 +789,7 @@ function coverIntro() {
     .to('#cScrib', {clipPath: 'inset(0 0% 0 0)', duration: .8, ease: 'none'});
 }
 gsap.to('#cBurst', {rotation: '+=360', duration: 30, repeat: -1, ease: 'none'});
-pin('#cover', 60).to('#cCut', {scale: 1.06, duration: 1}, 0).to('#cMast', {y: -10, duration: 1}, 0);
+pin('#cover', 60).fromTo('#cPlate', {scale: 1}, {scale: 1.08, duration: 1, ease: 'none'}, 0).to('#cCut', {scale: 1.06, duration: 1}, 0).to('#cMast', {y: -10, duration: 1}, 0);
 
 /* 2 HAPPY BIRTHDAY */
 prepDraw('#hbHeart path');
@@ -803,6 +808,7 @@ pin('#hb', 300, {onUpdate: s => { if (s.progress > .55 && !flashed) { flashed = 
 /* 3 ANNA IDLI */
 prepDraw('#anIdli path, #anIdli ellipse');
 pin('#anna', 300)
+  .fromTo('#anPlate', {scale: 1.15}, {scale: 1, duration: 3.5, ease: 'none'}, 0)
   .fromTo('#anWords div', {yPercent: 120, opacity: 0}, {yPercent: 0, opacity: 1, duration: .6, stagger: .2, ease: 'power4.out'}, 0)
   .fromTo('#anCut', {xPercent: 60, rotation: 8, opacity: 0}, {xPercent: 0, rotation: 0, opacity: 1, duration: 1, ease: 'power3.out'}, .6)
   .fromTo('#anFilm', {yPercent: 80, rotation: -20, opacity: 0}, {yPercent: 0, rotation: -5, opacity: 1, duration: .8, ease: 'power3.out'}, 1)
@@ -825,8 +831,8 @@ pin('#age', 200)
   .to({}, {duration: .4});
 
 /* 5 CONTACT SHEET */
-const sheet = [['akina', '01', 'that look', [8, 92]], ['sinonnas', '02', 'chef kinjal', [52, 92]], ['garba', '03', 'that laugh!!', [8, 92]], ['night', '04', 'us', [60, 92]], ['balsa', '05', 'that hug', [8, 92]], ['annaidli', '06', 'day one ♥', [44, 92]]];
-$('#csGrid').innerHTML = sheet.map(([k, n, note, [l, t]], i) => `<div class="cs-f"><img src="img/${k}.jpg" alt="" style="object-position:${k === 'garba' ? '30%' : '50%'} 30%"><span class="n">▸ ${n}A</span>
+const sheet = [['akina', '01', 'that look', [8, 92]], ['sinonnas', '02', 'chef kinjal', [52, 92]], ['garba', '03', 'that laugh!!', [8, 92]], ['car', '04', 'lonavala ✌️', [40, 92]], ['balsa', '05', 'that hug', [8, 92]], ['annaidli', '06', 'day one ♥', [44, 92]]];
+$('#csGrid').innerHTML = sheet.map(([k, n, note, [l, t]], i) => `<div class="cs-f"><img src="img/${k}.jpg" alt="" style="object-position:${k === 'garba' ? '30%' : k === 'car' ? '65%' : '50%'} 30%"><span class="n">▸ ${n}A</span>
   <svg class="cs-ring" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M50 4 C 86 2, 98 26, 96 52 C 94 82, 70 98, 46 96 C 16 94, 2 74, 4 48 C 6 22, 26 6, 56 6" vector-effect="non-scaling-stroke"/></svg>
   <div class="cs-note" style="left:${l}%;top:${t}%;transform:rotate(${i % 2 ? 6 : -6}deg)">${note}</div></div>`).join('');
 prepDraw('.cs-ring path');
@@ -839,7 +845,7 @@ csTl.fromTo('#csZoom', {opacity: 0, clipPath: 'inset(40% 30% 40% 30%)'}, {opacit
   .to({}, {duration: .5});
 
 /* 6 LOVE TOUR */
-const tour = [['Anna Idli', 'opening night', true], ['Lonavala', 'the road trip', false], ['Cozy Box', 'intimate show', true], ['Akina', 'dinner set', false], ["Si Nonna's", 'live cooking', true], ['Balsa', 'encore', false], ['Garba Night', 'dance floor', true], ['every café', 'residency', false]];
+const tour = [['Anna Idli', 'opening night', true], ['Lonavala', 'the road trip', true], ['Cozy Box', 'intimate show', true], ['Akina', 'dinner set', false], ["Si Nonna's", 'live cooking', true], ['Balsa', 'encore', false], ['Garba Night', 'dance floor', true], ['every café', 'residency', false]];
 $('#tList').innerHTML = tour.map(([v, d, s]) => `<div class="t-row"><b>${v}</b><span>${d}</span>${s ? '<i class="sold">SOLD OUT</i>' : ''}</div>`).join('');
 const tTl = pin('#tour', 300);
 tTl.fromTo('#tPlate', {scale: 1.2, xPercent: -4}, {scale: 1, xPercent: 0, duration: 3.6, ease: 'none'}, 0);
@@ -910,6 +916,7 @@ const R = ['you love loudly', 'your letters', 'you remember everything', 'you ne
 $('#rsList').innerHTML = R.map((r, i) => `<div class="rs-i"><b>${String(i + 1).padStart(2, '0')}</b><span>${r}</span></div>`).join('');
 const ri = $$('.rs-i');
 pin('#reasons', 260, {onUpdate: s => { const n = Math.round(Math.min(1, s.progress/.92)*ri.length); ri.forEach((r, i) => r.classList.toggle('on', i < n)); }})
+  .fromTo('#rsPlate', {scale: 1.12}, {scale: 1, duration: 1, ease: 'none'}, 0)
   .fromTo('.rs-hd .big', {scale: 1.6, opacity: 0}, {scale: 1, opacity: 1, duration: .1}, 0).to({}, {duration: .9});
 
 /* 11 WISH — a real cake */
@@ -1053,6 +1060,7 @@ pin('#wish', 80).fromTo('.w-hd .big div', {xPercent: (i) => i ? 100 : -100, opac
 /* 12 BACK COVER */
 let endFired = false;
 pin('#back', 220, {onUpdate: s => { if (s.progress > .7 && !endFired) { endFired = true; confetti(240); buzz([40, 40, 120]); } if (s.progress < .4) endFired = false; }})
+  .fromTo('#bkPlate', {scale: 1.15}, {scale: 1, duration: 2.4, ease: 'none'}, 0)
   .fromTo('#bkHd .rn', {y: -140, rotation: () => gsap.utils.random(-60, 60), opacity: 0}, {y: 0, rotation: (i, el) => el.style.transform.match(/rotate\(([-\d.]+)/)?.[1] || 0, opacity: 1, duration: .5, stagger: .04, ease: 'back.out(2.4)'}, 0)
   .fromTo('#bkCut', {yPercent: 60, opacity: 0}, {yPercent: 0, opacity: 1, duration: .8, ease: 'power3.out'}, .8)
   .to('#bkScript', {clipPath: 'inset(0 0% 0 0)', duration: .6, ease: 'none'}, 1.5)
