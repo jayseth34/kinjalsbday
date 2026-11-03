@@ -572,16 +572,16 @@ button,input{font:inherit;color:inherit}
   <section class="poster" id="news" data-f="p. 09 — breaking news">
     <div class="side l">extra! extra!</div><div class="side r">16 · 07 · 2026</div>
     <div class="ab">
-      <div class="np-mast"><div class="t">The Daily Us</div><div class="meta"><span>vol. 26</span><span>special edition</span><span>16 july 2026</span></div></div>
-      <div class="np-head" id="npHead"><span>SHE</span> <span>SAID</span><br><span>YES!</span></div>
-      <div class="np-dek" id="npDek">Local man asks the question of his life. Local girl says yes before he finishes the sentence.</div>
+      <div class="np-mast"><div class="t">The Daily Us</div><div class="meta"><span>vol. 26</span><span>gol dhana special</span><span>16 july 2026</span></div></div>
+      <div class="np-head" id="npHead"><span>IT'S</span><br><span>OFFICIAL!</span></div>
+      <div class="np-dek" id="npDek">Gol dhana done. Two families, one very sweet plate of gol, and a girl who is now officially his.</div>
       <div class="np-body">
         <div class="np-photo" id="npPhoto"><img src="img/cheek.jpg?v=4" alt="Kinjal kissing Jay on the cheek" style="object-position:50% 30%"><span>PICTURED: the happiest man in the city, moments later.</span></div>
-        <div class="np-col"><p>In what witnesses are calling "completely expected", Kinjal — known to exactly one man in the world as Bittu — said yes on the 16th of July.</p><p>The pair's story began over two cups of coffee at Anna Idli and has since toured Lonavala, Cozy Box, Akina and every café in the city.</p><p>Sources confirm he has not stopped smiling since. More on p. 26.</p></div>
+        <div class="np-col"><p>In what witnesses are calling "completely expected", Kinjal — known to exactly one man in the world as Bittu — made it official with Jay at their gol dhana on the 16th of July.</p><p>The pair's story began over two cups of coffee at Anna Idli and has since toured Lonavala, Cozy Box, Akina and every café in the city.</p><p>Sources confirm both families approve, the jaggery was excellent, and he has not stopped smiling since. More on p. 26.</p></div>
       </div>
       <svg class="ring-doodle" id="npRing" viewBox="0 0 300 150" style="left:2cqw;top:calc(4cqh + 19cqw);width:96cqw"><path d="M150 12 C 260 10, 300 50, 280 100 C 260 140, 60 150, 22 110 C -10 70, 40 20, 160 16 C 200 15, 230 20, 250 30"/></svg>
       <div class="stampc" id="npStamp" style="right:3cqw;top:calc(4cqh + 56cqw);width:24cqw;height:24cqw;border-width:.7cqw">
-        <svg viewBox="0 0 100 100"><defs><path id="sc2" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><text><textPath href="#sc2">· ENGAGED · 16.07.2026 · ENGAGED · 16.07.2026</textPath></text></svg><b style="font-size:5cqw">💍</b>
+        <svg viewBox="0 0 100 100"><defs><path id="sc2" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0"/></defs><text><textPath href="#sc2">· GOL DHANA · 16.07.2026 · GOL DHANA · 16.07.2026</textPath></text></svg><b style="font-size:5cqw">🤍</b>
       </div>
     </div>
   </section>
@@ -961,7 +961,7 @@ gsap.to('#ltSign', {clipPath: 'inset(0 0% 0 0)', ease: 'none', scrollTrigger: {t
 gsap.fromTo('.lt-paper', {rotation: -6, y: 80}, {rotation: -1.2, y: 0, ease: 'none', scrollTrigger: {trigger: '#letter', start: 'top bottom', end: 'top 20%', scrub: 1}});
 
 /* 10 REASONS */
-const R = ['you love loudly', 'your letters', 'you remember everything', 'you never stop talking', 'and I never want you to', 'Chef Kinjal', 'your garba twirl', 'that laugh', 'the way you look at me', 'you steal my food', 'you give with your whole heart', 'avocado gifts', 'you take care of everyone', 'including me', 'cozy café dates', 'you make coffee romantic', 'Lonavala singalongs', 'you said yes', 'you are my Bittu', 'my Yapper', 'your hugs', 'your patience with me', 'you make home a person', 'you dream big', 'you are kind', 'you are you'];
+const R = ['you love loudly', 'your letters', 'you remember everything', 'you never stop talking', 'and I never want you to', 'Chef Kinjal', 'your garba twirl', 'that laugh', 'the way you look at me', 'you steal my food', 'you give with your whole heart', 'avocado gifts', 'you take care of everyone', 'including me', 'cozy café dates', 'you make coffee romantic', 'Lonavala singalongs', 'you chose me', 'you are my Bittu', 'my Yapper', 'your hugs', 'your patience with me', 'you make home a person', 'you dream big', 'you are kind', 'you are you'];
 $('#rsList').innerHTML = R.map((r, i) => `<div class="rs-i"><b>${String(i + 1).padStart(2, '0')}</b><span>${r}</span></div>`).join('');
 const ri = $$('.rs-i');
 pin('#reasons', 260, {onUpdate: s => { const n = Math.round(Math.min(1, s.progress/.92)*ri.length); ri.forEach((r, i) => r.classList.toggle('on', i < n)); }})
